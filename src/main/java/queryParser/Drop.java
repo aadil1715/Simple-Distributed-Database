@@ -1,4 +1,4 @@
-package QueryParser;
+package queryParser;
 
 public class Drop {
 }
