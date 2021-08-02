@@ -1,12 +1,14 @@
 package queryValidator;
-
 import queryParser.Create;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import dataLogs.DataLogs;
 
 public class CreateValidator {
+    static DataLogs log = new DataLogs();
 
     public static void main(String[] args) throws IOException {
         String username="Manjinder";
@@ -25,7 +27,7 @@ public class CreateValidator {
             if (createTableSQL.find())
                 Create.createParse(createTableSQL, username);
             else
-                System.out.println("Please make sure the input is in standard SQL format.\n" + query + " is not valid.");
+                log.logger(Level.WARNING, "Please make sure the input is in standard SQL format");
         }
     }
 }
