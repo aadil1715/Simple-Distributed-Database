@@ -1,3 +1,13 @@
 
 Aug 03, 2021 5:16:13 AM dataLogs.DataLogs logger
 WARNING: Please make sure the input is in standard SQL format
+Aug 03, 2021 4:52:13 PM dataLogs.DataLogs logger
+WARNING: INVALID SQL Query !!
+Aug 03, 2021 5:09:43 PM dataLogs.DataLogs logger
+WARNING: INVALID SQL Query !!
+Aug 03, 2021 6:08:37 PM dataLogs.DataLogs logger
+WARNING: INVALID SQL Query !!
+Aug 03, 2021 6:08:58 PM dataLogs.DataLogs logger
+WARNING: INVALID SQL Query !!
+Aug 03, 2021 6:08:58 PM dataLogs.DataLogs logger
+WARNING: INVALID SQL Query !!

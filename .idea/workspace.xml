@@ -42,10 +42,10 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Application.CreateValidator">
+  <component name="RunManager" selected="Application.SelectValidator">
     <configuration name="CreateValidator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="queryValidator.CreateValidator" />
-      <module name="RelationalDatabase" />
+      <module name="csci5408_groupproject_dp3" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="queryValidator.*" />
@@ -63,19 +63,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
+    <configuration name="SelectValidator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="queryValidator.SelectValidator" />
+      <module name="csci5408_groupproject_dp3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="queryValidator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SelectValidator" />
         <item itemvalue="Application.CreateValidator" />
         <item itemvalue="Application.Main" />
       </list>
@@ -106,5 +109,17 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/queryValidator/SelectValidator.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
