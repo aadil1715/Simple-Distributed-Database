@@ -13,7 +13,7 @@ import java.util.logging.Level;
 public class Create {
     static DataLogs log = new DataLogs();
 
-    public static void createParse(Matcher createTable, String username) throws IOException {
+    public static void createParser(Matcher createTable, String username) throws IOException {
         String tableName = createTable.group(2);
         String columns = createTable.group(3);
         String[] columnString = columns.split("\\s*,\\s*"); // separate by comma
