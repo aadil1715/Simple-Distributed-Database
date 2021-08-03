@@ -5,7 +5,7 @@ import java.util.logging.Level;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import dataLogs.DataLogs;
-import queryParser.Create;
+import queryParser.Insert;
 
 public class InsertValidator {
     static DataLogs log = new DataLogs();
@@ -18,10 +18,10 @@ public class InsertValidator {
         Scanner scanner = new Scanner(System.in);
         String query;
         while (scanner.hasNext() && !((query = scanner.nextLine()).equalsIgnoreCase("exit"))) {
-            Matcher createTableSQL = INSERT_REGEX.matcher(query);
+            Matcher insertTableSQL = INSERT_REGEX.matcher(query);
 
-            if (createTableSQL.find())
-                Create.createParse(createTableSQL, username);
+            if (insertTableSQL.find())
+                Insert.insertParser(insertTableSQL, username);
             else
                 log.logger(Level.WARNING, "INVALID SQL Query !!");
         }
