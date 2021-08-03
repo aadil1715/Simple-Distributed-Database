@@ -12,50 +12,121 @@ import java.util.logging.Level;
 
 public class Create {
     static DataLogs log = new DataLogs();
-
     public static void createParser(Matcher createTable, String username) throws IOException {
-        String tableName = createTable.group(2);
-        String columns = createTable.group(3);
-        String[] columnString = columns.split("\\s*,\\s*"); // separate by comma
-        List<String> columnStringList = Arrays.asList(columnString); //List contains column name and datatype, eg. id int
-        ArrayList<String> columnName = new ArrayList<>();
+        String tableName = createTable.group(1);
+        String columns = createTable.group(2);
+        String[] columnString = columns.split("\\s*,\\s*"); //Total columns in CREATE operation splitted by comma
+        List<String> columnStringList = Arrays.asList(columnString); // It contains column name, datatype, and constraint of DD
+        List<String> tableColumnsStringList = Arrays.asList(columnString);
+
+        ArrayList<String> dataDictionaryColumns = new ArrayList<>();
+        ArrayList<String> tableColumns = new ArrayList<>();
         ArrayList<String> dataType = new ArrayList<>();
-        for (String s : columnStringList) {
-            String[] columnType = s.split("\\s+"); // separate by whitespace
-            columnName.add(columnType[0]);
-            dataType.add(columnType[1]);
+        ArrayList<String> constraints = new ArrayList<>();
+        ArrayList<String> ref_table = new ArrayList<>();
+
+        for (int i = 0; i < columnStringList.size(); i++) {
+            String[] columnType = columnStringList.get(i).split("\\s");
+            if (columnType.length == 3) {
+                dataDictionaryColumns.add(columnType[0]);
+                dataType.add(columnType[1]);
+                constraints.add(columnType[2]);
+            } else if ((columnType.length == 2)) {
+                dataDictionaryColumns.add(columnType[0]);
+                dataType.add(columnType[1]);
+            } else if (columnType.length == 6) {  //To handle primary key constraint column
+                dataDictionaryColumns.add(columnType[2]);
+                dataType.add(columnType[1]);
+                String[] refTable = columnType[5].split("\\(");
+                ref_table.add(refTable[0]);
+            }
         }
-        createDataDictionary(tableName,columnName,dataType);
-        createTable(username, tableName, columnName, dataType);
+
+        for (int i=0;i<tableColumnsStringList.size();i++) {
+            String[] tableColumnType = tableColumnsStringList.get(i).split("\\s+"); // separate by whitespace
+            tableColumns.add(tableColumnType[0]);
+            //tableColumns.add(tableColumnType[1]);
+        }
+        System.out.println("Table Columns:"+tableColumns);
+        createDataDictionary(username,tableName,dataDictionaryColumns,dataType,constraints,ref_table);
+        createTable(username, tableName, tableColumns, dataType);
     }
 
-    public static void createDataDictionary(String tableName, ArrayList<String> columnNames,
-                                            ArrayList<String> colDataTypes) throws IOException {
-        File dataDictionaryFile=new File("output/Data_Dictionary.txt");
-        FileWriter writeDD=new FileWriter(dataDictionaryFile,true);
-        int count=1;
-        if(count==1){
-            writeDD.append("TABLES").append("\t").append(" || ").append("\t").append("COLUMNS");
-            writeDD.append("\n");
-            count++;
-        }
-        writeDD.append(tableName).append("\t").append("||").append("\t");
-        for (int i=0;i<columnNames.size();i++){
-            if(!(i==columnNames.size()-1))
-                writeDD.append(columnNames.get(i)).append(" ").append(colDataTypes.get(i)).append("\t")
-                        .append("->").append("\t");
-            else
-                writeDD.append(columnNames.get(i)).append("").append(colDataTypes.get(i)).append("\n");
+    public static void createDataDictionary(String username, String tableName, ArrayList<String> columnNames,
+                                            ArrayList<String> colDataTypes, ArrayList<String> constraints,
+                                            ArrayList<String> refTable) throws IOException {
+        File dataDictionaryFile = new File("output/Data_Dictionary.txt");
+        File tableFile=new File("output/"+ tableName+ ".txt");
+
+        if (!dataDictionaryFile.exists()) {
+            FileWriter dataDictionary = new FileWriter(dataDictionaryFile, true);
+            dataDictionary.append("TABLES").append("\t").append(" <==> ").append("\t").append("COLUMNS");
+            dataDictionary.append("\n");
+            dataDictionary.append(tableName).append("\t").append("<==>").append("\t");
+            for (int i=0;i<columnNames.size();i++){
+                if(!(i==columnNames.size()-1)) {
+                    if(i<=constraints.size()-1){
+                        if ((columnNames.get(i) != ("FOREIGN_KEY"))) {
+                            dataDictionary.append(columnNames.get(i)).append(" ").append(colDataTypes.get(i))
+                                    .append(" ").append(constraints.get(i)).append("\t").append("<->").append("\t");
+                        }
+                    }
+                    else {
+                        dataDictionary.append(columnNames.get(i)).append(" ").append(colDataTypes.get(i))
+                                .append("\t").append("<->").append("\t");
+                    }
+                }
+                else if(columnNames.get(i).equals("FOREIGN_KEY")) {
+                    dataDictionary.append(columnNames.get(i)).append(" ").append("(").append("FK_COLUMN:").append(colDataTypes.get(i))
+                            .append(",").append("REF_TABLE:").append(refTable.get(0)).append(")").append("\n");
+                }
+                else {
+                    dataDictionary.append(columnNames.get(i)).append(" ").append(colDataTypes.get(i)).append("\n");
+                }
+            }
+
+            dataDictionary.flush();
+            log.logger(Level.INFO, "Data Dictionary created successfully");
+            dataDictionary.close();
         }
 
-        if(!dataDictionaryFile.exists()) {
-            log.logger(Level.INFO, "Data Dictionary created successfully");
-        }
         else {
-            log.logger(Level.WARNING, "Data Dictionary already exists");
+         if (!tableFile.exists()) {
+             FileWriter dataDictionary = new FileWriter(dataDictionaryFile, true);
+             dataDictionary.append(tableName).append("\t").append("<==>").append("\t");
+//             for (int i = 0; i < columnNames.size(); i++) {
+//                    if (!(i == columnNames.size() - 1))
+//                        dataDictionary.append(columnNames.get(i)).append(" ").append(colDataTypes.get(i)).append("\t")
+//                                .append("||").append("\t");
+//                    else
+//                        dataDictionary.append(columnNames.get(i)).append(" ").append(colDataTypes.get(i)).append("\n");
+//                }
+             for (int i=0;i<columnNames.size();i++){
+                 if(!(i==columnNames.size()-1)) {
+                     if(i<=constraints.size()-1){
+                         if ((columnNames.get(i) != ("FOREIGN_KEY"))) {
+                             dataDictionary.append(columnNames.get(i)).append(" ").append(colDataTypes.get(i))
+                                     .append(" ").append(constraints.get(i)).append("\t").append("<->").append("\t");
+                         }
+                     }
+                     else {
+                         dataDictionary.append(columnNames.get(i)).append(" ").append(colDataTypes.get(i))
+                                 .append("\t").append("<->").append("\t");
+                     }
+                 }
+                 else if(columnNames.get(i).equals("FOREIGN_KEY")) {
+                     dataDictionary.append(columnNames.get(i)).append(" ").append("(").append("FK_COLUMN:").append(colDataTypes.get(i))
+                             .append(",").append("REF_TABLE:").append(refTable.get(0)).append(")").append("\n");
+                 }
+                 else {
+                     dataDictionary.append(columnNames.get(i)).append(" ").append(colDataTypes.get(i)).append("\n");
+                 }
+             }
+             dataDictionary.flush();
+             dataDictionary.close();
+            }
+
         }
-        writeDD.flush();
-        writeDD.close();
     }
 
     public static void createTable(String username, String tableName, ArrayList<String> columnsName,
