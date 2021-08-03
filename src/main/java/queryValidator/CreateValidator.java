@@ -15,7 +15,7 @@ public class CreateValidator {
         validateCreate(username);
     }
     private static final Pattern CREATE_REGEX =
-            Pattern.compile("(?i)(CREATE\\sTABLE\\s(\\w+)\\s?\\(((?:\\s?\\w+\\s\\w+\\(?[0-9]*\\)?,?)+)\\)\\s?;)");
+            Pattern.compile("CREATE TABLE (\\S+)\\s*\\((.*?)\\)\\;");
 
     public static void validateCreate(String username) throws IOException {
         System.out.println("Enter your SQL Query");
