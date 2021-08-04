@@ -6,11 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="40209afe-a773-49aa-ad55-170138ffae9b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/Data_dictionary.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/SQLDump.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/student1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/student2.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/queryParser/Drop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/queryParser/Drop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/queryValidator/CreateValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/queryValidator/CreateValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/queryValidator/DBOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/queryValidator/DBOperations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/queryValidator/DropValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/queryValidator/DropValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/queryValidator/InsertValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/queryValidator/InsertValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SQLDump/DataDump.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SQLDump/DataDump.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/queryParser/Drop.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/queryParser/Drop.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/queryValidator/CreateValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/queryValidator/CreateValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/queryValidator/DBOperations.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/queryValidator/DBOperations.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userLoginDetails.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +158,7 @@
       <workItem from="1628066357476" duration="1378000" />
       <workItem from="1628067913031" duration="6596000" />
       <workItem from="1628076120943" duration="7313000" />
-      <workItem from="1628084215460" duration="8540000" />
+      <workItem from="1628084215460" duration="14208000" />
     </task>
     <servers />
   </component>

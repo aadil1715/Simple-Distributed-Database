@@ -24,29 +24,33 @@ public class Drop {
         int count=0;
         //Iterating Line by line in file. Line in which table to be dropped is there, is not written in temporary file.
         while ((line = bufferedReader.readLine()) != null) {
+            String currentLine=line;
             if (line.contains(tableName)) {
                 int firstIndex=line.indexOf(tableName);
                 int lastIndex=line.indexOf(";");
-                line.substring(firstIndex,lastIndex).trim();
-
-//                line = bufferedReader.readLine();
-//                while (!line.isBlank()) {
-//                    line = bufferedReader.readLine();
-//                }
+                String lineToDrop=line.substring(firstIndex,lastIndex);
+                if(currentLine.equals(lineToDrop))
+                    continue;
             }
-            else{ //Write every other line in temporary file
-                fileWriter.write(line);
+            //Write every other line in temporary file
+            else{
+                fileWriter.write(currentLine);
                 fileWriter.write("\n");
             }
         }
+        fileWriter.flush();
+        fileWriter.close();
         ddFile.delete();
         tempDataDictionary.renameTo(new File("Output/Data_dictionary.txt"));
     }
 
     public static void dropTable(String tableName) throws FileNotFoundException {
         File tableFile = new File("output/"+tableName+".txt");
-        tableFile.delete();
-        log.logger(Level.INFO, "Table Dropped successfully !!!");
+        boolean isTableDeleted = tableFile.delete();
+        if(isTableDeleted)
+            log.logger(Level.INFO, "Table Dropped successfully !!!");
+        else
+            log.logger(Level.WARNING, "Table Does not exist !!!");
     }
 }
 

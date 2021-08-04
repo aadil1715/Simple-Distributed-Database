@@ -1,3 +1,4 @@
 TABLES	 <==> 	COLUMNS
 student1	<==>	student_id INT NOT_NULL	<->	student_name VARCHAR NOT_NULL	<->	email VARCHAR NOT_NULL	<->	phoneNumber VARCHAR	<->	PRIMARY_KEY (student_id)	<->	FOREIGN_KEY (FK_COLUMN:fk_monitor,REF_TABLE:monitor);
 student2	<==>	student_id INT NOT_NULL	<->	student_name VARCHAR NOT_NULL	<->	email VARCHAR NOT_NULL	<->	phoneNumber VARCHAR	<->	PRIMARY_KEY (student_id)	<->	FOREIGN_KEY (FK_COLUMN:fk_monitor,REF_TABLE:monitor);
+student3	<==>	student_id INT NOT_NULL	<->	student_name VARCHAR NOT_NULL	<->	email VARCHAR NOT_NULL	<->	phoneNumber VARCHAR	<->	PRIMARY_KEY (student_id)	<->	FOREIGN_KEY (FK_COLUMN:fk_monitor,REF_TABLE:monitor);
