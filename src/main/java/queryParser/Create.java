@@ -11,7 +11,7 @@ import java.util.logging.Level;
 
 public class Create {
     static DataLogs log = new DataLogs();
-    public static void createParser(Matcher createTable, String username) throws IOException {
+    public static void createParser(Matcher createTable, String username, FileWriter queryFileWriter) throws IOException {
         String tableName = createTable.group(1);
         String columns = createTable.group(2);
         String[] columnString = columns.split("\\s*,\\s*"); //Total columns in CREATE operation splitted by comma
@@ -46,13 +46,13 @@ public class Create {
                 tableColumns.add(tableColumnType[0]);
             }
         }
-        createDataDictionary(username,tableName,dataDictionaryColumns,dataType,constraints,ref_table);
-        createTable(username, tableName, tableColumns, dataType);
+        createDataDictionary(username,tableName,dataDictionaryColumns,dataType,constraints,ref_table,queryFileWriter);
+        createTable(username, tableName, tableColumns, dataType,queryFileWriter);
     }
 
     public static void createDataDictionary(String username, String tableName, ArrayList<String> columnNames,
                                             ArrayList<String> colDataTypes, ArrayList<String> constraints,
-                                            ArrayList<String> refTable) throws IOException {
+                                            ArrayList<String> refTable,FileWriter queryFileLogs) throws IOException {
         File dataDictionaryFile = new File("output/Data_dictionary.txt");
         File tableFile=new File("output/"+ tableName+ ".txt");
 
@@ -84,7 +84,9 @@ public class Create {
             }
 
             dataDictionary.flush();
+            queryFileLogs.append("(").append(username).append(")=> ").append("TABLE: ").append(tableName).append(" is inserted in Data Dictionary.");
             log.logger(Level.INFO, "Data Dictionary created successfully");
+            queryFileLogs.flush();
             dataDictionary.close();
         }
 
@@ -121,7 +123,7 @@ public class Create {
     }
 
     public static void createTable(String username, String tableName, ArrayList<String> columnsName,
-                                   ArrayList<String> colDataType) throws IOException {
+                                   ArrayList<String> colDataType, FileWriter queryFileLogs) throws IOException {
         File tableFile=new File("output/"+ tableName+ ".txt");
         if(!(tableFile.exists())){
             FileWriter writeTable=new FileWriter(tableFile,true);
@@ -134,12 +136,16 @@ public class Create {
             }
             writeTable.flush();
             writeTable.close();
+            queryFileLogs.append("(").append(username).append(")=>").append(tableName).append(": is created ").append("\n");
             log.logger(Level.INFO, "Table created successfully");
             System.out.println("Table: " + tableName + " created by: " + username);
         }
         else {
+            queryFileLogs.append("(").append(username).append(")=>").append("Cannot create").append(tableName)
+                    .append(" table.").append("\n");
             System.out.println("Table cannot be created as it is already there with same name");
         }
+        queryFileLogs.flush();
     }
 }
 

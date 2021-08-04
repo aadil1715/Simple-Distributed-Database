@@ -10,7 +10,8 @@ import java.util.regex.Matcher;
 public class Insert {
 
     static DataLogs log=new DataLogs();
-    public static void insertParser(Matcher insertRegex, String username) throws IOException {
+
+    public static void insertParser(Matcher insertRegex, String username, FileWriter queryFileLogs) throws IOException {
         String tableName = insertRegex.group(2);  //Regex Group to fetch table name
 
         String columns = insertRegex.group(3); // Regex Group to fetch column name
@@ -68,8 +69,11 @@ public class Insert {
             if (tableColumns[position].contains(primaryKeyValue))
                 isDuplicate = true;
         }
-        if(isDuplicate==true)
+        if(isDuplicate==true) {
+            queryFileLogs.append("(").append(username).append(")=>").append("DUPLICATE error!! Cannot INSERT into : ")
+                    .append(tableName).append(" table.").append("\n");
             log.logger(Level.SEVERE, "Data cannot be inserted. DUPLICATE Error !!");
+        }
         bufferStream.close();
 
         if (isDuplicate == false) {
@@ -82,13 +86,18 @@ public class Insert {
                     else
                         writeInTable.append(columnValueList.get(i)).append("\n");
                 }
+                queryFileLogs.append("(").append(username).append(")=>").append("Data Inserted Successfully in : ")
+                        .append(tableName).append(" table").append("\n");
                 log.logger(Level.INFO, "Data Inserted Successfully !!");
                 writeInTable.flush();
                 writeInTable.close();
             }
             else {
+                queryFileLogs.append("(").append(username).append(")=>").append("Cannot INSERT into : ").append(tableName)
+                        .append(" table.").append("\n");
                 log.logger(Level.WARNING, "Table does not exists !!");
             }
+            queryFileLogs.flush();
         }
     }
 }

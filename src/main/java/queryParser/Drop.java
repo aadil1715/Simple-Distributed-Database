@@ -7,13 +7,13 @@ import dataLogs.DataLogs;
 
 public class Drop {
     static DataLogs log = new DataLogs();
-    public static void dropParser(Matcher dropTable, String username) throws IOException {
+    public static void dropParser(Matcher dropTable, String username,FileWriter queryFileLogs) throws IOException {
         String tableName = dropTable.group(2);
-        dropDDTable(tableName);
-        dropTable(tableName);
+        dropDDTable(tableName,username,queryFileLogs);
+        dropTable(tableName,username,queryFileLogs);
     }
 
-    public static void dropDDTable(String tableName) throws IOException {
+    public static void dropDDTable(String tableName, String username, FileWriter queryFileLogs) throws IOException {
         String dataDictionaryPath = "Output/Data_dictionary.txt";
         File ddFile=new File(dataDictionaryPath);
         FileReader dataDictionaryFile = new FileReader(ddFile);
@@ -32,7 +32,7 @@ public class Drop {
                 if(currentLine.equals(lineToDrop))
                     continue;
             }
-            //Write every other line in temporary file
+            // Write every other line in temporary file
             else{
                 fileWriter.write(currentLine);
                 fileWriter.write("\n");
@@ -44,13 +44,19 @@ public class Drop {
         tempDataDictionary.renameTo(new File("Output/Data_dictionary.txt"));
     }
 
-    public static void dropTable(String tableName) throws FileNotFoundException {
+    public static void dropTable(String tableName,String username,FileWriter queryFileLogs) throws IOException {
         File tableFile = new File("output/"+tableName+".txt");
         boolean isTableDeleted = tableFile.delete();
-        if(isTableDeleted)
+        if(isTableDeleted) {
+            queryFileLogs.append("(").append(username).append(")=> ").append("TABLE: ").append(tableName)
+                    .append(" is Dropped.").append("\n");
             log.logger(Level.INFO, "Table Dropped successfully !!!");
-        else
+        }
+        else {
+            queryFileLogs.append("(").append(username).append(")=> ").append("TABLE: ").append(tableName)
+                    .append(" does not exist.").append("\n");
             log.logger(Level.WARNING, "Table Does not exist !!!");
+        }
     }
 }
 
