@@ -46,7 +46,6 @@ public class Create {
                 tableColumns.add(tableColumnType[0]);
             }
         }
-
         createDataDictionary(username,tableName,dataDictionaryColumns,dataType,constraints,ref_table);
         createTable(username, tableName, tableColumns, dataType);
     }
@@ -54,7 +53,7 @@ public class Create {
     public static void createDataDictionary(String username, String tableName, ArrayList<String> columnNames,
                                             ArrayList<String> colDataTypes, ArrayList<String> constraints,
                                             ArrayList<String> refTable) throws IOException {
-        File dataDictionaryFile = new File("output/Data_dictionary.txt");
+        File dataDictionaryFile = new File("output/Data_Dictionary.txt");
         File tableFile=new File("output/"+ tableName+ ".txt");
 
         if (!dataDictionaryFile.exists()) {
@@ -77,10 +76,10 @@ public class Create {
                 }
                 else if(columnNames.get(i).equals("FOREIGN_KEY")) {
                     dataDictionary.append(columnNames.get(i)).append(" ").append("(").append("FK_COLUMN:").append(colDataTypes.get(i))
-                            .append(",").append("REF_TABLE:").append(refTable.get(0)).append(")").append("\n");
+                            .append(",").append("REF_TABLE:").append(refTable.get(0)).append(")").append(";").append("\n");
                 }
                 else {
-                    dataDictionary.append(columnNames.get(i)).append(" ").append(colDataTypes.get(i)).append("\n");
+                    dataDictionary.append(columnNames.get(i)).append(" ").append(colDataTypes.get(i)).append(";").append("\n");
                 }
             }
 
@@ -108,10 +107,10 @@ public class Create {
                  }
                  else if(columnNames.get(i).equals("FOREIGN_KEY")) {
                      dataDictionary.append(columnNames.get(i)).append(" ").append("(").append("FK_COLUMN:").append(colDataTypes.get(i))
-                             .append(",").append("REF_TABLE:").append(refTable.get(0)).append(")").append("\n");
+                             .append(",").append("REF_TABLE:").append(refTable.get(0)).append(")").append(";").append("\n");
                  }
                  else {
-                     dataDictionary.append(columnNames.get(i)).append(" ").append(colDataTypes.get(i)).append("\n");
+                     dataDictionary.append(columnNames.get(i)).append(" ").append(colDataTypes.get(i)).append(";").append("\n");
                  }
              }
              dataDictionary.flush();
@@ -131,7 +130,7 @@ public class Create {
                     writeTable.append(columnsName.get(i)).append("\t").append("<->").append("\t");
                 }
                 else
-                    writeTable.append(columnsName.get(i));
+                    writeTable.append(columnsName.get(i)).append("\n");
             }
             writeTable.flush();
             writeTable.close();

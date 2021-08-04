@@ -14,24 +14,25 @@ public class Drop {
     }
 
     public static void dropDDTable(String tableName) throws IOException {
-        String dataDictionaryPath = "Output/Data_dictionary.txt";
+        String dataDictionaryPath = "Output/Data_Dictionary.txt";
         File ddFile=new File(dataDictionaryPath);
         FileReader dataDictionaryFile = new FileReader(ddFile);
         BufferedReader bufferedReader = new BufferedReader(dataDictionaryFile);
-        File tempDataDictionary = new File("Output/temporary.txt");
-        FileWriter fileWriter=new FileWriter(tempDataDictionary);
+        File tempDataDictionary = new File("Output/Temporary.txt");
+        FileWriter fileWriter=new FileWriter(tempDataDictionary,true);
         String line;
         int count=0;
         //Iterating Line by line in file. Line in which table to be dropped is there, is not written in temporary file.
         while ((line = bufferedReader.readLine()) != null) {
-            System.out.println("Line number:"+ count++);
             if (line.contains(tableName)) {
-                System.out.println("Table index: " + line.indexOf(tableName));
-                System.out.println("Trying to print last index:"+line.indexOf(String.valueOf(line.endsWith(" "))));
-                line = bufferedReader.readLine();
-                while (!line.isBlank()) {
-                    line = bufferedReader.readLine();
-                }
+                int firstIndex=line.indexOf(tableName);
+                int lastIndex=line.indexOf(";");
+                line.substring(firstIndex,lastIndex).trim();
+
+//                line = bufferedReader.readLine();
+//                while (!line.isBlank()) {
+//                    line = bufferedReader.readLine();
+//                }
             }
             else{ //Write every other line in temporary file
                 fileWriter.write(line);
@@ -39,7 +40,7 @@ public class Drop {
             }
         }
         ddFile.delete();
-        tempDataDictionary.renameTo(new File("Output/Data_dictionary.txt"));
+        tempDataDictionary.renameTo(new File("Output/Data_Dictionary.txt"));
     }
 
     public static void dropTable(String tableName) throws FileNotFoundException {

@@ -16,6 +16,7 @@ public class Main {
         System.out.println("4. Generate ERD");
         System.out.println("5. General SQL Dump");
         System.out.println("6. Exit");
+
         String user = sc.next();
         System.out.println("Username: ");
         String username = sc.next();
