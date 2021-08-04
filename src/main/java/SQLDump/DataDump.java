@@ -11,9 +11,9 @@ import java.util.regex.Pattern;
 
 public class DataDump {
 
-    private static String fileName = "SQLDump.sql";
+    private static String fileName = "Output/SQLDump.sql";
     private static final String CREATE_REGEX =
-            "(?i)(CREATE\\sTABLE\\s(\\w+)\\s?\\(((?:\\s?\\w+\\s\\w+\\(?[0-9]*\\)?,?)+)\\)\\s?;)";
+            "CREATE TABLE (\\S+)\\s*\\((.*?)\\)\\;";
 
     public static void sqlDump(List<String> list) {
         try {
@@ -28,12 +28,11 @@ public class DataDump {
                 if(query.matches(CREATE_REGEX)) {
                     Matcher matcher = Pattern.compile(CREATE_REGEX).matcher(query);
                     if (matcher.find()) {
-                        writer.append("DROP TABLE IF EXISTS '" + matcher.group(2) + "';").append("\n");
+                        writer.append("DROP TABLE IF EXISTS '" + matcher.group(1) + "';").append("\n");
                     }
                 }
                 writer.append(query).append("\n").append("\n");
             }
-
             writer.close();
         }
         catch (Exception e) {
