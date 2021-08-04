@@ -76,7 +76,7 @@ public class Select {
                 String[] strArr1 = line1.replaceAll("\\s+", "").split(
                     "<->");
                 for (int k = 0; k < colIndexes.size(); k++) {
-                  dataFound.add(strArr1[k]);
+                  dataFound.add(strArr1[Integer.parseInt(colIndexes.get(k))]);
                 }
                 System.out.println(dataFound);
                 dataFound=new ArrayList<>();
@@ -136,15 +136,14 @@ public class Select {
               //ADD SELECTING LOGIC FOR SPECIFIC COLUMNS
               String line1 = null;
               Scanner sc = new Scanner(tableFile);
-
               while (sc.hasNext()) {
                 line1 = sc.nextLine();
                 String[] strArr1 = line1.replaceAll("\\s+", "").split(
                     "<->");
                 if (z != -1) {
                   if (strArr1[z].equals(whereValue)) {
-                    for (int k = 0; k < colIndexes.size(); k++) {
-                      dataFound.add(strArr1[k]);
+                    for (int k = 0; k <colIndexes.size(); k++) {
+                      dataFound.add(strArr1[Integer.parseInt(colIndexes.get(k))]);
                     }
                   }
                 }

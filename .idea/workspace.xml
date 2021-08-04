@@ -4,17 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="40209afe-a773-49aa-ad55-170138ffae9b" name="Default Changelist" comment="Select all rows and columns functionality completed">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Output/student5.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/queryParser/Update.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/queryValidator/UpdateValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="40209afe-a773-49aa-ad55-170138ffae9b" name="Default Changelist" comment="Select functionality fully completed">
+      <change afterPath="$PROJECT_DIR$/Output/student6.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/queryValidator/DeleteValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Database.log" beforeDir="false" afterPath="$PROJECT_DIR$/Database.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/student2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Output/student2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/queryParser/Select.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/queryParser/Select.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/queryParser/Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/queryParser/Update.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/queryValidator/UpdateValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/queryValidator/UpdateValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/queryParser/Select.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/queryParser/Select.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,9 +92,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UpdateValidator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="queryValidator.UpdateValidator" />
+      <module name="csci5408_groupproject_dp3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="queryValidator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.SelectValidator" />
+        <item itemvalue="Application.UpdateValidator" />
         <item itemvalue="Application.CreateValidator" />
         <item itemvalue="Application.Main" />
       </list>
@@ -113,7 +137,7 @@
       <updated>1627938417459</updated>
       <workItem from="1627938420551" duration="9701000" />
       <workItem from="1628001645140" duration="10230000" />
-      <workItem from="1628086692693" duration="5755000" />
+      <workItem from="1628086692693" duration="14855000" />
     </task>
     <task id="LOCAL-00001" summary="Select all rows and columns functionality completed">
       <created>1628001774289</created>
@@ -122,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628001774289</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Select functionality fully completed">
+      <created>1628092560342</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1628092560342</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,6 +174,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Select all rows and columns functionality completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Select all rows and columns functionality completed" />
+    <MESSAGE value="Select functionality fully completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Select functionality fully completed" />
   </component>
 </project>
