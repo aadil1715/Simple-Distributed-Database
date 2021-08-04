@@ -1,2 +1,1 @@
-student_id	||	student_name	||	gender	||	phoneNumber
-1   ||  Aadil Shaikh    ||  MALE    ||  12345689
+student_id	<->	student_name	<->	email	<->	phoneNumber

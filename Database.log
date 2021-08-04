@@ -1,67 +1,39 @@
 
-Aug 03, 2021 5:16:13 AM dataLogs.DataLogs logger
-WARNING: Please make sure the input is in standard SQL format
-Aug 03, 2021 4:52:13 PM dataLogs.DataLogs logger
+Aug 05, 2021 12:00:01 AM dataLogs.DataLogs logger
+INFO: User is successfully registered
+Aug 05, 2021 12:00:01 AM dataLogs.DataLogs logger
+INFO: Login successful
+Aug 05, 2021 12:03:49 AM dataLogs.DataLogs logger
+INFO: Data Dictionary created successfully
+Aug 05, 2021 12:03:49 AM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 05, 2021 12:03:59 AM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 05, 2021 12:04:04 AM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 05, 2021 12:04:10 AM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 05, 2021 12:05:37 AM dataLogs.DataLogs logger
+INFO: Generating SQL Dump
+Aug 05, 2021 12:05:58 AM dataLogs.DataLogs logger
+INFO: Login successful
+Aug 05, 2021 12:06:28 AM dataLogs.DataLogs logger
 WARNING: INVALID SQL Query !!
-Aug 03, 2021 5:09:43 PM dataLogs.DataLogs logger
-WARNING: INVALID SQL Query !!
-Aug 03, 2021 6:08:37 PM dataLogs.DataLogs logger
-WARNING: INVALID SQL Query !!
-Aug 03, 2021 6:08:58 PM dataLogs.DataLogs logger
-WARNING: INVALID SQL Query !!
-Aug 03, 2021 6:08:58 PM dataLogs.DataLogs logger
-WARNING: INVALID SQL Query !!
-Aug 04, 2021 7:59:30 PM dataLogs.DataLogs logger
-WARNING: INVALID SQL Query !!
-Aug 04, 2021 8:14:45 PM dataLogs.DataLogs logger
-SEVERE: No column found!
-Aug 04, 2021 8:32:35 PM dataLogs.DataLogs logger
-SEVERE: No column found!
-Aug 04, 2021 8:40:27 PM dataLogs.DataLogs logger
-SEVERE: No column found!
-Aug 04, 2021 8:45:57 PM dataLogs.DataLogs logger
-SEVERE: No column found! for where column
-Aug 04, 2021 8:47:28 PM dataLogs.DataLogs logger
-SEVERE: No column found! for where column
-Aug 04, 2021 9:16:36 PM dataLogs.DataLogs logger
-SEVERE: No column found!
-Aug 04, 2021 9:17:05 PM dataLogs.DataLogs logger
-SEVERE: No column found!
-Aug 04, 2021 9:17:48 PM dataLogs.DataLogs logger
-SEVERE: No column found!
-Aug 04, 2021 9:18:06 PM dataLogs.DataLogs logger
-SEVERE: No column found!
-Aug 04, 2021 9:18:31 PM dataLogs.DataLogs logger
-SEVERE: No column found!
-Aug 04, 2021 9:20:53 PM dataLogs.DataLogs logger
-SEVERE: No column found!
-Aug 04, 2021 9:24:50 PM dataLogs.DataLogs logger
-SEVERE: No column found!
-Aug 04, 2021 9:24:50 PM dataLogs.DataLogs logger
-SEVERE: No column found!
-Aug 04, 2021 9:24:50 PM dataLogs.DataLogs logger
-SEVERE: No column found!
-Aug 04, 2021 9:24:50 PM dataLogs.DataLogs logger
-SEVERE: No column found!
-Aug 04, 2021 11:43:33 PM dataLogs.DataLogs logger
-WARNING: INVALID Update SQL Query !!
-Aug 05, 2021 12:12:14 AM dataLogs.DataLogs logger
-WARNING: INVALID Update SQL Query !!
-Aug 05, 2021 12:12:19 AM dataLogs.DataLogs logger
-WARNING: INVALID Update SQL Query !!
-Aug 05, 2021 12:13:11 AM dataLogs.DataLogs logger
-WARNING: INVALID Update SQL Query !!
-Aug 05, 2021 12:13:15 AM dataLogs.DataLogs logger
-WARNING: INVALID Update SQL Query !!
-Aug 05, 2021 12:21:30 AM dataLogs.DataLogs logger
-WARNING: INVALID Update SQL Query !!
-Aug 05, 2021 12:21:30 AM dataLogs.DataLogs logger
-WARNING: INVALID Update SQL Query !!
-Aug 05, 2021 12:21:30 AM dataLogs.DataLogs logger
-WARNING: INVALID Update SQL Query !!
-Aug 05, 2021 12:21:30 AM dataLogs.DataLogs logger
-WARNING: INVALID Update SQL Query !!
-Aug 05, 2021 12:21:30 AM dataLogs.DataLogs logger
-WARNING: INVALID Update SQL Query !!
-Aug 05, 2021 1:35:53 AM dataLogs.DataLogs logger
-WARNING: INVALID Update SQL Query !!
+Aug 05, 2021 12:06:55 AM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 05, 2021 12:08:10 AM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 05, 2021 12:08:27 AM dataLogs.DataLogs logger
+SEVERE: Data cannot be inserted. DUPLICATE Error !!
+Aug 05, 2021 12:08:50 AM dataLogs.DataLogs logger
+SEVERE: Data cannot be inserted. DUPLICATE Error !!
+Aug 05, 2021 12:09:43 AM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 05, 2021 12:10:04 AM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 05, 2021 12:11:10 AM dataLogs.DataLogs logger
+INFO: Generating SQL Dump
+Aug 05, 2021 12:12:47 AM dataLogs.DataLogs logger
+INFO: Login successful
+Aug 05, 2021 12:13:13 AM dataLogs.DataLogs logger
+INFO: Table Dropped successfully !!!
