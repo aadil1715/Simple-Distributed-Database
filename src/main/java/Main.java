@@ -1,9 +1,15 @@
+import SQLDump.DataDump;
 import dataLogs.DataLogs;
 import userAuthentication.UserAuthentication;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+import java.util.logging.Level;
 
 public class Main {
+
+    static List<String> list = new ArrayList<>();
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -16,19 +22,36 @@ public class Main {
         System.out.println("4. Generate ERD");
         System.out.println("5. General SQL Dump");
         System.out.println("6. Exit");
-        String user = sc.next();
-        System.out.println("Username: ");
-        String username = sc.next();
-        System.out.println("Password: ");
-        String password = sc.next();
+        int user = sc.nextInt();
 
-        if (user.equalsIgnoreCase("1")) {
+        String username = null;
+        String password = null;
+        if(user == 1 || user == 2) {
+            System.out.println("Username: ");
+            username = sc.next();
+            System.out.println("Password: ");
+            password = sc.next();
+        }
+
+        if (user == 1) {
             UserAuthentication.login(username, password);
-        } else if (user.equalsIgnoreCase("2")) {
+        } else if (user == 2) {
             UserAuthentication.registration(username, password);
             UserAuthentication.login(username, password);
-        } else {
+        }
+
+        if(user > 6) {
             System.out.println("Please select a valid option");
         }
+
+        if(user == 5) {
+            if(list.size() !=0) {
+                DataDump.sqlDump(list);
+            }
+            else {
+                log.logger(Level.WARNING, "No commands have been executed");
+            }
+        }
+
     }
 }
