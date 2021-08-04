@@ -53,7 +53,7 @@ public class Create {
     public static void createDataDictionary(String username, String tableName, ArrayList<String> columnNames,
                                             ArrayList<String> colDataTypes, ArrayList<String> constraints,
                                             ArrayList<String> refTable) throws IOException {
-        File dataDictionaryFile = new File("output/Data_Dictionary.txt");
+        File dataDictionaryFile = new File("output/Data_dictionary.txt");
         File tableFile=new File("output/"+ tableName+ ".txt");
 
         if (!dataDictionaryFile.exists()) {
@@ -138,7 +138,7 @@ public class Create {
             System.out.println("Table: " + tableName + " created by: " + username);
         }
         else {
-            log.logger(Level.SEVERE, "Table cannot be created as it is already there with same name");
+            System.out.println("Table cannot be created as it is already there with same name");
         }
     }
 }

@@ -12,11 +12,6 @@ import java.util.regex.Pattern;
 
 public class DropValidator {
     static DataLogs log = new DataLogs();
-
-    public static void main(String[] args) throws IOException {
-        String username="Manjinder";
-        validateDrop(username);
-    }
     private static final Pattern DROP_REGEX =
             Pattern.compile("(?i)(DROP\\sTABLE\\s(\\w+);)");;
 
@@ -26,7 +21,6 @@ public class DropValidator {
         String query;
         while (scanner.hasNext() && !((query = scanner.nextLine()).equalsIgnoreCase("exit"))) {
             Matcher dropTableSQL = DROP_REGEX.matcher(query);
-
             if (dropTableSQL.find())
                 Drop.dropParser(dropTableSQL, username);
             else

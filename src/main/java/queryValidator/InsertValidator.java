@@ -9,16 +9,10 @@ import queryParser.Insert;
 
 public class InsertValidator {
     static DataLogs log = new DataLogs();
-
-    public static void main(String[] args) throws IOException {
-        String username="Manjinder";
-        InsertValidator iv=new InsertValidator();
-        iv.validateCreate(username);
-    }
     private static final Pattern INSERT_REGEX =
             Pattern.compile("(?i)(INSERT\\sINTO\\s+(\\w+)+\\(([\\s\\S]+)\\)\\s+VALUES+\\(([\\s\\S]+)\\);)");
 
-    public static void validateCreate(String username) throws IOException {
+    public static void validateInsert(String username) throws IOException {
         System.out.println("Enter your SQL Query");
         Scanner scanner = new Scanner(System.in);
         String query;
