@@ -66,3 +66,201 @@ Aug 04, 2021 1:40:58 AM dataLogs.DataLogs logger
 INFO: Table created successfully
 Aug 04, 2021 1:43:54 AM dataLogs.DataLogs logger
 INFO: Table created successfully
+Aug 04, 2021 2:03:19 AM dataLogs.DataLogs logger
+WARNING: INVALID SQL Query !!
+Aug 04, 2021 2:03:23 AM dataLogs.DataLogs logger
+WARNING: INVALID SQL Query !!
+Aug 04, 2021 2:04:12 AM dataLogs.DataLogs logger
+WARNING: INVALID SQL Query !!
+Aug 04, 2021 2:05:10 AM dataLogs.DataLogs logger
+WARNING: INVALID SQL Query !!
+Aug 04, 2021 2:05:17 AM dataLogs.DataLogs logger
+WARNING: INVALID SQL Query !!
+Aug 04, 2021 2:05:32 AM dataLogs.DataLogs logger
+WARNING: INVALID SQL Query !!
+Aug 04, 2021 2:15:39 AM dataLogs.DataLogs logger
+WARNING: INVALID SQL Query !!
+Aug 04, 2021 2:15:39 AM dataLogs.DataLogs logger
+WARNING: INVALID SQL Query !!
+Aug 04, 2021 2:15:39 AM dataLogs.DataLogs logger
+WARNING: INVALID SQL Query !!
+Aug 04, 2021 2:15:40 AM dataLogs.DataLogs logger
+WARNING: INVALID SQL Query !!
+Aug 04, 2021 2:15:40 AM dataLogs.DataLogs logger
+WARNING: INVALID SQL Query !!
+Aug 04, 2021 2:24:10 AM dataLogs.DataLogs logger
+WARNING: INVALID SQL Query !!
+Aug 04, 2021 2:24:10 AM dataLogs.DataLogs logger
+WARNING: INVALID SQL Query !!
+Aug 04, 2021 2:24:10 AM dataLogs.DataLogs logger
+WARNING: INVALID SQL Query !!
+Aug 04, 2021 2:24:10 AM dataLogs.DataLogs logger
+WARNING: INVALID SQL Query !!
+Aug 04, 2021 2:24:10 AM dataLogs.DataLogs logger
+WARNING: INVALID SQL Query !!
+Aug 04, 2021 2:24:23 AM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 04, 2021 2:25:18 AM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 04, 2021 2:26:08 AM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 04, 2021 2:27:08 AM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 04, 2021 4:07:58 AM dataLogs.DataLogs logger
+INFO: Table Deleted successfully !!!
+Aug 04, 2021 4:54:49 AM dataLogs.DataLogs logger
+INFO: Table Dropped successfully !!!
+Aug 04, 2021 4:56:41 AM dataLogs.DataLogs logger
+WARNING: INVALID SQL Query !!
+Aug 04, 2021 4:57:14 AM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 04, 2021 4:57:43 AM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 04, 2021 4:57:53 AM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 04, 2021 4:58:20 AM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 04, 2021 4:58:26 AM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 04, 2021 4:59:00 AM dataLogs.DataLogs logger
+INFO: Table Dropped successfully !!!
+Aug 04, 2021 5:01:30 AM dataLogs.DataLogs logger
+INFO: Data Dictionary created successfully
+Aug 04, 2021 5:01:30 AM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 04, 2021 5:01:48 AM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 04, 2021 5:01:56 AM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 04, 2021 5:37:08 AM dataLogs.DataLogs logger
+WARNING: INVALID SQL Query !!
+Aug 04, 2021 5:38:55 AM dataLogs.DataLogs logger
+WARNING: INVALID SQL Query !!
+Aug 04, 2021 5:40:56 AM dataLogs.DataLogs logger
+WARNING: INVALID SQL Query !!
+Aug 04, 2021 5:41:43 AM dataLogs.DataLogs logger
+WARNING: INVALID SQL Query !!
+Aug 04, 2021 6:12:35 AM dataLogs.DataLogs logger
+WARNING: INVALID SQL Query !!
+Aug 04, 2021 6:32:59 AM dataLogs.DataLogs logger
+WARNING: INVALID SQL Query !!
+Aug 04, 2021 3:52:02 PM dataLogs.DataLogs logger
+INFO: Data Dictionary created successfully
+Aug 04, 2021 3:52:02 PM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 04, 2021 3:52:16 PM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 04, 2021 3:53:20 PM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 04, 2021 3:54:01 PM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 04, 2021 4:14:28 PM dataLogs.DataLogs logger
+WARNING: INVALID SQL Query !!
+Aug 04, 2021 4:52:52 PM dataLogs.DataLogs logger
+INFO: Data Dictionary created successfully
+Aug 04, 2021 4:52:52 PM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 04, 2021 4:53:06 PM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 04, 2021 4:53:36 PM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 04, 2021 4:53:42 PM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 04, 2021 6:10:12 PM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 04, 2021 6:10:34 PM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 04, 2021 6:23:03 PM dataLogs.DataLogs logger
+WARNING: INVALID SQL Query !!
+Aug 04, 2021 6:23:23 PM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 04, 2021 6:23:40 PM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 04, 2021 6:29:43 PM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 04, 2021 6:29:56 PM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 04, 2021 6:30:08 PM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 04, 2021 6:37:30 PM dataLogs.DataLogs logger
+SEVERE: Data cannot be inserted. DUPLICATE Error !!
+Aug 04, 2021 6:46:32 PM dataLogs.DataLogs logger
+SEVERE: Data cannot be inserted. DUPLICATE Error !!
+Aug 04, 2021 6:48:31 PM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 04, 2021 6:49:23 PM dataLogs.DataLogs logger
+SEVERE: Data cannot be inserted. DUPLICATE Error !!
+Aug 04, 2021 6:49:42 PM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 04, 2021 6:57:07 PM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 04, 2021 6:57:31 PM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 04, 2021 6:58:17 PM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 04, 2021 6:59:10 PM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 04, 2021 7:16:05 PM dataLogs.DataLogs logger
+INFO: Data Dictionary created successfully
+Aug 04, 2021 7:16:05 PM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 04, 2021 7:16:25 PM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 04, 2021 7:16:33 PM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 04, 2021 7:16:42 PM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 04, 2021 7:16:51 PM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 04, 2021 7:17:57 PM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 04, 2021 7:38:27 PM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 04, 2021 7:39:06 PM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 04, 2021 7:39:36 PM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 04, 2021 7:39:50 PM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 04, 2021 7:42:04 PM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 04, 2021 7:42:42 PM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 04, 2021 7:42:56 PM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 04, 2021 7:43:06 PM dataLogs.DataLogs logger
+SEVERE: Data cannot be inserted. DUPLICATE Error !!
+Aug 04, 2021 7:43:06 PM dataLogs.DataLogs logger
+SEVERE: Data cannot be inserted. DUPLICATE Error !!
+Aug 04, 2021 7:45:36 PM dataLogs.DataLogs logger
+SEVERE: Data cannot be inserted. DUPLICATE Error !!
+Aug 04, 2021 7:45:37 PM dataLogs.DataLogs logger
+SEVERE: Data cannot be inserted. DUPLICATE Error !!
+Aug 04, 2021 7:45:54 PM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 04, 2021 7:47:58 PM dataLogs.DataLogs logger
+SEVERE: Data cannot be inserted. DUPLICATE Error !!
+Aug 04, 2021 7:47:58 PM dataLogs.DataLogs logger
+SEVERE: Data cannot be inserted. DUPLICATE Error !!
+Aug 04, 2021 7:47:58 PM dataLogs.DataLogs logger
+SEVERE: Data cannot be inserted. DUPLICATE Error !!
+Aug 04, 2021 7:50:03 PM dataLogs.DataLogs logger
+SEVERE: Data cannot be inserted. DUPLICATE Error !!
+Aug 04, 2021 7:50:03 PM dataLogs.DataLogs logger
+SEVERE: Data cannot be inserted. DUPLICATE Error !!
+Aug 04, 2021 7:50:03 PM dataLogs.DataLogs logger
+SEVERE: Data cannot be inserted. DUPLICATE Error !!
+Aug 04, 2021 7:50:38 PM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 04, 2021 7:50:52 PM dataLogs.DataLogs logger
+SEVERE: Data cannot be inserted. DUPLICATE Error !!
+Aug 04, 2021 7:51:05 PM dataLogs.DataLogs logger
+SEVERE: Data cannot be inserted. DUPLICATE Error !!
+Aug 04, 2021 7:51:05 PM dataLogs.DataLogs logger
+SEVERE: Data cannot be inserted. DUPLICATE Error !!
+Aug 04, 2021 7:51:05 PM dataLogs.DataLogs logger
+SEVERE: Data cannot be inserted. DUPLICATE Error !!
+Aug 04, 2021 7:51:05 PM dataLogs.DataLogs logger
+SEVERE: Data cannot be inserted. DUPLICATE Error !!
+Aug 04, 2021 7:52:41 PM dataLogs.DataLogs logger
+SEVERE: Data cannot be inserted. DUPLICATE Error !!

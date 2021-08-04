@@ -13,10 +13,14 @@ import java.util.regex.Pattern;
 public class DropValidator {
     static DataLogs log = new DataLogs();
 
+    public static void main(String[] args) throws IOException {
+        String username="Manjinder";
+        validateDrop(username);
+    }
     private static final Pattern DROP_REGEX =
             Pattern.compile("(?i)(DROP\\sTABLE\\s(\\w+);)");;
 
-    public static void validateCreate(String username) throws IOException {
+    public static void validateDrop(String username) throws IOException {
         System.out.println("Enter your SQL Query");
         Scanner scanner = new Scanner(System.in);
         String query;

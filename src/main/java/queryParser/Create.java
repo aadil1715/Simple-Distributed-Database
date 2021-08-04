@@ -1,5 +1,4 @@
 package queryParser;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -41,13 +40,12 @@ public class Create {
                 ref_table.add(refTable[0]);
             }
         }
-
         for (int i=0;i<tableColumnsStringList.size();i++) {
-            String[] tableColumnType = tableColumnsStringList.get(i).split("\\s+"); // separate by whitespace
-            tableColumns.add(tableColumnType[0]);
-            //tableColumns.add(tableColumnType[1]);
+            if(!tableColumnsStringList.get(i).contains("PRIMARY") && !tableColumnsStringList.get(i).contains("CONSTRAINT")) {
+                String[] tableColumnType = tableColumnsStringList.get(i).split("\\s+"); // separate by whitespace
+                tableColumns.add(tableColumnType[0]);
+            }
         }
-        System.out.println("Table Columns:"+tableColumns);
         createDataDictionary(username,tableName,dataDictionaryColumns,dataType,constraints,ref_table);
         createTable(username, tableName, tableColumns, dataType);
     }
@@ -78,10 +76,10 @@ public class Create {
                 }
                 else if(columnNames.get(i).equals("FOREIGN_KEY")) {
                     dataDictionary.append(columnNames.get(i)).append(" ").append("(").append("FK_COLUMN:").append(colDataTypes.get(i))
-                            .append(",").append("REF_TABLE:").append(refTable.get(0)).append(")").append("\n");
+                            .append(",").append("REF_TABLE:").append(refTable.get(0)).append(")").append(";").append("\n");
                 }
                 else {
-                    dataDictionary.append(columnNames.get(i)).append(" ").append(colDataTypes.get(i)).append("\n");
+                    dataDictionary.append(columnNames.get(i)).append(" ").append(colDataTypes.get(i)).append(";").append("\n");
                 }
             }
 
@@ -94,13 +92,6 @@ public class Create {
          if (!tableFile.exists()) {
              FileWriter dataDictionary = new FileWriter(dataDictionaryFile, true);
              dataDictionary.append(tableName).append("\t").append("<==>").append("\t");
-//             for (int i = 0; i < columnNames.size(); i++) {
-//                    if (!(i == columnNames.size() - 1))
-//                        dataDictionary.append(columnNames.get(i)).append(" ").append(colDataTypes.get(i)).append("\t")
-//                                .append("||").append("\t");
-//                    else
-//                        dataDictionary.append(columnNames.get(i)).append(" ").append(colDataTypes.get(i)).append("\n");
-//                }
              for (int i=0;i<columnNames.size();i++){
                  if(!(i==columnNames.size()-1)) {
                      if(i<=constraints.size()-1){
@@ -116,10 +107,10 @@ public class Create {
                  }
                  else if(columnNames.get(i).equals("FOREIGN_KEY")) {
                      dataDictionary.append(columnNames.get(i)).append(" ").append("(").append("FK_COLUMN:").append(colDataTypes.get(i))
-                             .append(",").append("REF_TABLE:").append(refTable.get(0)).append(")").append("\n");
+                             .append(",").append("REF_TABLE:").append(refTable.get(0)).append(")").append(";").append("\n");
                  }
                  else {
-                     dataDictionary.append(columnNames.get(i)).append(" ").append(colDataTypes.get(i)).append("\n");
+                     dataDictionary.append(columnNames.get(i)).append(" ").append(colDataTypes.get(i)).append(";").append("\n");
                  }
              }
              dataDictionary.flush();
@@ -136,10 +127,10 @@ public class Create {
             FileWriter writeTable=new FileWriter(tableFile,true);
             for (int i=0;i<columnsName.size();i++) {
                 if(!(i==columnsName.size()-1)) {
-                    writeTable.append(columnsName.get(i)).append("\t").append("||").append("\t");
+                    writeTable.append(columnsName.get(i)).append("\t").append("<->").append("\t");
                 }
                 else
-                    writeTable.append(columnsName.get(i));
+                    writeTable.append(columnsName.get(i)).append("\n");
             }
             writeTable.flush();
             writeTable.close();
