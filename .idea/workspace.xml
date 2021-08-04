@@ -5,19 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40209afe-a773-49aa-ad55-170138ffae9b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Database.log" beforeDir="false" afterPath="$PROJECT_DIR$/Database.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/Data_Dictionary.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/emp16.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/emp18.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/student.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/student1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/student10.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Output/student2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/student3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/student20.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/student25.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/student30.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/student35.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/student40.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/student41.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/student42.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/student6.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/queryParser/Create.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/queryParser/Create.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/queryValidator/CreateValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/queryValidator/CreateValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/queryParser/Drop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/queryParser/Drop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/queryParser/Insert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/queryParser/Insert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/queryValidator/DropValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/queryValidator/DropValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/queryValidator/InsertValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/queryValidator/InsertValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/queryParser/Create.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/queryParser/Create.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/queryParser/Drop.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/queryParser/Drop.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/queryParser/Insert.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/queryParser/Insert.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/queryValidator/CreateValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/queryValidator/CreateValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userLoginDetails.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/queryParser/testCreate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/queryValidator/DropValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/queryValidator/DropValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/queryValidator/InsertValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/queryValidator/InsertValidator.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,9 +73,35 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Application.CreateValidator">
+  <component name="RunManager" selected="Application.InsertValidator">
     <configuration name="CreateValidator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="queryValidator.CreateValidator" />
+      <module name="RelationalDatabase" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="queryValidator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DropValidator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="queryValidator.DropValidator" />
+      <module name="RelationalDatabase" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="queryValidator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InsertValidator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="queryValidator.InsertValidator" />
       <module name="RelationalDatabase" />
       <extension name="coverage">
         <pattern>
@@ -79,6 +120,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="queryParser.test" />
+      <module name="RelationalDatabase" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="queryParser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -92,7 +146,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.InsertValidator" />
+        <item itemvalue="Application.DropValidator" />
         <item itemvalue="Application.CreateValidator" />
+        <item itemvalue="Application.test" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -109,7 +166,7 @@
       <workItem from="1627980276728" duration="10860000" />
       <workItem from="1628000566569" duration="934000" />
       <workItem from="1628001627207" duration="11477000" />
-      <workItem from="1628020475198" duration="1419000" />
+      <workItem from="1628020475198" duration="18306000" />
     </task>
     <servers />
   </component>

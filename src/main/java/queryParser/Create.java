@@ -1,5 +1,4 @@
 package queryParser;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -41,13 +40,13 @@ public class Create {
                 ref_table.add(refTable[0]);
             }
         }
-
         for (int i=0;i<tableColumnsStringList.size();i++) {
-            String[] tableColumnType = tableColumnsStringList.get(i).split("\\s+"); // separate by whitespace
-            tableColumns.add(tableColumnType[0]);
-            //tableColumns.add(tableColumnType[1]);
+            if(!tableColumnsStringList.get(i).contains("PRIMARY") && !tableColumnsStringList.get(i).contains("CONSTRAINT")) {
+                String[] tableColumnType = tableColumnsStringList.get(i).split("\\s+"); // separate by whitespace
+                tableColumns.add(tableColumnType[0]);
+            }
         }
-        System.out.println("Table Columns:"+tableColumns);
+
         createDataDictionary(username,tableName,dataDictionaryColumns,dataType,constraints,ref_table);
         createTable(username, tableName, tableColumns, dataType);
     }
@@ -55,7 +54,7 @@ public class Create {
     public static void createDataDictionary(String username, String tableName, ArrayList<String> columnNames,
                                             ArrayList<String> colDataTypes, ArrayList<String> constraints,
                                             ArrayList<String> refTable) throws IOException {
-        File dataDictionaryFile = new File("output/Data_Dictionary.txt");
+        File dataDictionaryFile = new File("output/Data_dictionary.txt");
         File tableFile=new File("output/"+ tableName+ ".txt");
 
         if (!dataDictionaryFile.exists()) {
@@ -94,13 +93,6 @@ public class Create {
          if (!tableFile.exists()) {
              FileWriter dataDictionary = new FileWriter(dataDictionaryFile, true);
              dataDictionary.append(tableName).append("\t").append("<==>").append("\t");
-//             for (int i = 0; i < columnNames.size(); i++) {
-//                    if (!(i == columnNames.size() - 1))
-//                        dataDictionary.append(columnNames.get(i)).append(" ").append(colDataTypes.get(i)).append("\t")
-//                                .append("||").append("\t");
-//                    else
-//                        dataDictionary.append(columnNames.get(i)).append(" ").append(colDataTypes.get(i)).append("\n");
-//                }
              for (int i=0;i<columnNames.size();i++){
                  if(!(i==columnNames.size()-1)) {
                      if(i<=constraints.size()-1){
@@ -136,7 +128,7 @@ public class Create {
             FileWriter writeTable=new FileWriter(tableFile,true);
             for (int i=0;i<columnsName.size();i++) {
                 if(!(i==columnsName.size()-1)) {
-                    writeTable.append(columnsName.get(i)).append("\t").append("||").append("\t");
+                    writeTable.append(columnsName.get(i)).append("\t").append("<->").append("\t");
                 }
                 else
                     writeTable.append(columnsName.get(i));
