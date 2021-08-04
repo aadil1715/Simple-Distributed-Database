@@ -1,5 +1,7 @@
 package queryValidator;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
@@ -14,20 +16,23 @@ public class DBOperations {
     }
 
     public void executeQueries(String query,String username,List<String> list) throws IOException {
-            String[] firstWord = query.split(" ");
-            switch (firstWord[0].toLowerCase()) {
-                case "create":
-                    CreateValidator createValidator = new CreateValidator(query);
-                    createValidator.validateCreate(username, list);
-                    break;
-                case "insert":
-                    InsertValidator insertValidator = new InsertValidator(query);
-                    insertValidator.validateInsert(username, list);
-                    break;
-                case "drop":
-                    DropValidator dropValidator=new DropValidator(query);
-                    dropValidator.validateDrop(username,list);
-                    break;
+        String[] firstWord = query.split(" ");
+        File queryLogs=new File("Output/Query_Logs.txt");
+        FileWriter queryLogsFile = new FileWriter(queryLogs,true);
+
+        switch (firstWord[0].toLowerCase()) {
+            case "create":
+                CreateValidator createValidator = new CreateValidator(query,queryLogsFile);
+                createValidator.validateCreate(username, list);
+                break;
+            case "insert":
+                InsertValidator insertValidator = new InsertValidator(query,queryLogsFile);
+                insertValidator.validateInsert(username, list);
+                break;
+            case "drop":
+                DropValidator dropValidator=new DropValidator(query,queryLogsFile);
+                dropValidator.validateDrop(username,list);
+                break;
 //            case 4:
 //                break;
 //            case 5:

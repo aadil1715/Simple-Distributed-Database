@@ -17,7 +17,10 @@ public class Main {
     public static  String username = "";
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
-        System.out.println("***** Welcome to Database Management System *****");
+        System.out.println();
+        System.out.println("=============================================");
+        System.out.println(" ** Welcome to Database Management System ** ");
+        System.out.println("=============================================");
         System.out.println("MAIN MENU:");
         System.out.println("1. Login");
         System.out.println("2. Register");
@@ -80,7 +83,6 @@ public class Main {
                 dbOperations.executeQueries(transaction.get(i),username,list);
             }
         }
-
         else if (operation == 3) {
             ERD.generateERD();
         }

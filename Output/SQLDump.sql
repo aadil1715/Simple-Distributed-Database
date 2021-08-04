@@ -1,3 +1,8 @@
-DROP TABLE IF EXISTS 'student10';
-CREATE TABLE student10 (student_id INT NOT_NULL ,student_name VARCHAR NOT_NULL, email VARCHAR NOT_NULL, phoneNumber VARCHAR, PRIMARY_KEY (student_id), CONSTRAINT fk_monitor FOREIGN_KEY (monitor_Id) REFERENCES monitor(ID));
+Insert into student30(student_id, student_name, email, phoneNumber) values(1,Manjinder,manjinder@gmail.com,1234);
+
+Insert into student30(student_id, student_name, email, phoneNumber) values(2,Manjinder,manjinder@gmail.com,1234);
+
+Insert into student30(student_id, student_name, email, phoneNumber) values(1,Manjinder,manjinder@gmail.com,1234);
+
+Insert into student30(student_id, student_name, email, phoneNumber) values(3,Manjinder,manjinder@gmail.com,1234);
 
