@@ -1,11 +1,13 @@
 package queryValidator;
 
+import java.awt.*;
 import java.io.IOException;
+import java.util.List;
 import java.util.Scanner;
 
 public class DBOperations {
 
-    public void performDBOperations(String username) throws IOException {
+    public void performDBOperations(String username, List<String> list) throws IOException {
         Scanner scanner =new Scanner(System.in);
         System.out.println("***************");
         System.out.println("1.CREATE");
@@ -18,13 +20,13 @@ public class DBOperations {
         int input=scanner.nextInt();
         switch (input){
             case 1:
-                CreateValidator.validateCreate(username);
+                CreateValidator.validateCreate(username,list);
                 break;
             case 2:
-                InsertValidator.validateInsert(username);
+                InsertValidator.validateInsert(username,list);
                 break;
             case 3:
-                DropValidator.validateDrop(username);
+                DropValidator.validateDrop(username,list);
                 break;
             case 4:
                 break;

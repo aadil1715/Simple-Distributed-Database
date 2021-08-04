@@ -1,10 +1,9 @@
 import ERDGenerator.ERD;
 import SQLDump.DataDump;
 import dataLogs.DataLogs;
-import queryValidator.CreateValidator;
 import userAuthentication.UserAuthentication;
 
-import javax.swing.text.LabelView;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -15,7 +14,7 @@ public class Main {
 
     static List<String> list = new ArrayList<>();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
         System.out.println("***** Welcome to Database Management System *****");
         System.out.println("MAIN MENU:");
@@ -42,18 +41,18 @@ public class Main {
         }
     }
 
-    private static void performOperations(String username) {
+    private static void performOperations(String username) throws IOException {
         DataLogs log = new DataLogs();
         System.out.println("Please select the following operation");
         System.out.println("1. Perform DB Operations");
         System.out.println("2. Generate ERD");
         System.out.println("3. Exit");
         Scanner scanner = new Scanner(System.in);
-        int operation = scanner.nextInt();
+        int operation=scanner.nextInt();
         if(operation == 1) {
-            //example
+            DBOperations dbOperations=new DBOperations();
             try {
-                CreateValidator.validateCreate(username,list);
+                dbOperations.performDBOperations(username,list);
             }
             catch (Exception e) {
                 e.printStackTrace();
