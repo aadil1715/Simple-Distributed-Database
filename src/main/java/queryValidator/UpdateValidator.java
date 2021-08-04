@@ -36,37 +36,6 @@ public class UpdateValidator {
       if (updateTableSQL.find()) {
         //ADD ACTION
         Update.parseUpdate(updateTableSQL,username);
-//        File tableFile = new File("output/" + tableName + ".txt");
-//        Scanner sc1 = new Scanner(tableFile);
-//        List<String> fileContent = new ArrayList<>();
-//        while(sc1.hasNextLine()){
-//          fileContent.add(sc1.nextLine());
-//        }
-//        List<String> freshFileContent = new ArrayList<>();
-//        for(int j=0;j<fileContent.size();j++) {
-//          String temp = fileContent.get(j);
-//          String strArr[] = temp.replaceAll("\t", "").split("<->");
-//          for (int i = 0; i < strArr.length; i++) {
-//            String freshData = strArr[i];
-//            freshFileContent.add(freshData);
-//          }
-//        }
-//        int index = freshFileContent.indexOf("1");
-//        freshFileContent.set(index,"4");
-//        System.out.println(freshFileContent);
-//        FileWriter fileWriter = new FileWriter(tableFile,false);
-//        int count=1;
-//        for(int j=0;j<freshFileContent.size();j++){
-//          if(count%4==0){
-//            fileWriter.append(freshFileContent.get(j)).append("\n");
-//          }
-//          else {
-//            fileWriter.append(freshFileContent.get(j)).append("\t").append(
-//                "<->").append("\t");
-//          }
-//          count++;
-//        }
-//        fileWriter.flush();
       } else {
         log.logger(Level.WARNING, "INVALID Update SQL Query !!");
       }

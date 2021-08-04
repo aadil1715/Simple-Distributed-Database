@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="40209afe-a773-49aa-ad55-170138ffae9b" name="Default Changelist" comment="Select functionality fully completed">
-      <change afterPath="$PROJECT_DIR$/Output/student6.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/queryValidator/DeleteValidator.java" afterDir="false" />
+    <list default="true" id="40209afe-a773-49aa-ad55-170138ffae9b" name="Default Changelist" comment="Update functionality done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Database.log" beforeDir="false" afterPath="$PROJECT_DIR$/Database.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/queryParser/Select.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/queryParser/Select.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/queryParser/Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/queryParser/Update.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/queryValidator/UpdateValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/queryValidator/UpdateValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/queryParser/Select.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/queryParser/Select.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +131,7 @@
       <updated>1627938417459</updated>
       <workItem from="1627938420551" duration="9701000" />
       <workItem from="1628001645140" duration="10230000" />
-      <workItem from="1628086692693" duration="14855000" />
+      <workItem from="1628086692693" duration="15065000" />
     </task>
     <task id="LOCAL-00001" summary="Select all rows and columns functionality completed">
       <created>1628001774289</created>
@@ -153,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628092560342</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Update functionality done">
+      <created>1628109238922</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1628109238922</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,6 +176,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Select all rows and columns functionality completed" />
     <MESSAGE value="Select functionality fully completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Select functionality fully completed" />
+    <MESSAGE value="Update functionality done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update functionality done" />
   </component>
 </project>
