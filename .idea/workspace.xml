@@ -6,17 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="40209afe-a773-49aa-ad55-170138ffae9b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Database.log" beforeDir="false" afterPath="$PROJECT_DIR$/Database.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/Data_dictionary.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/temporary.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/queryParser/Create.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/queryParser/Create.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/queryParser/Drop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/queryParser/Drop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/queryParser/Insert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/queryParser/Insert.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/queryParser/Create.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/queryParser/Create.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/queryParser/Drop.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/queryParser/Drop.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/queryParser/Insert.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/queryParser/Insert.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/queryParser/test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/queryValidator/CreateValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/queryValidator/CreateValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/queryValidator/DBOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/queryValidator/DBOperations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/queryValidator/DropValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/queryValidator/DropValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/queryValidator/InsertValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/queryValidator/InsertValidator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +51,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Application.InsertValidator">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="CreateValidator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="queryValidator.CreateValidator" />
       <module name="RelationalDatabase" />
@@ -130,11 +124,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.InsertValidator" />
         <item itemvalue="Application.CreateValidator" />
         <item itemvalue="Application.DropValidator" />
         <item itemvalue="Application.test" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -154,7 +148,7 @@
       <workItem from="1628066357476" duration="1378000" />
       <workItem from="1628067913031" duration="6596000" />
       <workItem from="1628076120943" duration="7313000" />
-      <workItem from="1628084215460" duration="2954000" />
+      <workItem from="1628084215460" duration="8540000" />
     </task>
     <servers />
   </component>

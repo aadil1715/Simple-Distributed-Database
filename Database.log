@@ -264,3 +264,17 @@ Aug 04, 2021 7:51:05 PM dataLogs.DataLogs logger
 SEVERE: Data cannot be inserted. DUPLICATE Error !!
 Aug 04, 2021 7:52:41 PM dataLogs.DataLogs logger
 SEVERE: Data cannot be inserted. DUPLICATE Error !!
+Aug 04, 2021 10:09:45 PM dataLogs.DataLogs logger
+INFO: User is successfully registered
+Aug 04, 2021 10:09:45 PM dataLogs.DataLogs logger
+INFO: Login successful
+Aug 04, 2021 10:10:25 PM dataLogs.DataLogs logger
+INFO: Data Dictionary created successfully
+Aug 04, 2021 10:10:25 PM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 04, 2021 10:10:54 PM dataLogs.DataLogs logger
+INFO: Table created successfully
+Aug 04, 2021 10:11:48 PM dataLogs.DataLogs logger
+WARNING: INVALID SQL Query !!
+Aug 04, 2021 10:11:55 PM dataLogs.DataLogs logger
+INFO: Generating SQL Dump

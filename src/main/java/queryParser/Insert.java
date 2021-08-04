@@ -22,7 +22,7 @@ public class Insert {
         List<String> columnValueList = Arrays.asList(columnValue);
 
         // fetch primary Key column from Data Dictionary
-        String dataDictionaryPath = "Output/Data_Dictionary.txt";
+        String dataDictionaryPath = "Output/Data_dictionary.txt";
         File ddFile = new File(dataDictionaryPath);
         FileReader dataDictionaryFile = new FileReader(ddFile);
         BufferedReader bufferedReader = new BufferedReader(dataDictionaryFile);

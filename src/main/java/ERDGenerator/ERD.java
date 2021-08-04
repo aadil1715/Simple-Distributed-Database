@@ -14,7 +14,7 @@ import java.util.logging.Level;
 public class ERD {
 
     private static String fileName = "Output/ERD.txt";
-    private static String outputFile = "Output/Data_Dictionary.txt";
+    private static String outputFile = "Output/data_Dictionary.txt";
     private static String foreignKey = "FOREIGN_KEY";
 
     public static void generateERD() {

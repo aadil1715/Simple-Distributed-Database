@@ -14,7 +14,7 @@ public class Drop {
     }
 
     public static void dropDDTable(String tableName) throws IOException {
-        String dataDictionaryPath = "Output/Data_Dictionary.txt";
+        String dataDictionaryPath = "Output/Data_dictionary.txt";
         File ddFile=new File(dataDictionaryPath);
         FileReader dataDictionaryFile = new FileReader(ddFile);
         BufferedReader bufferedReader = new BufferedReader(dataDictionaryFile);
@@ -40,7 +40,7 @@ public class Drop {
             }
         }
         ddFile.delete();
-        tempDataDictionary.renameTo(new File("Output/Data_Dictionary.txt"));
+        tempDataDictionary.renameTo(new File("Output/Data_dictionary.txt"));
     }
 
     public static void dropTable(String tableName) throws FileNotFoundException {
