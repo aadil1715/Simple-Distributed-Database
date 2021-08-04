@@ -23,7 +23,6 @@ public class Main {
         int user = sc.nextInt();
         String username = "";
         String password = "";
-
         if (user == 1 || user == 2) {
             System.out.println("Username: ");
             username = sc.next();
