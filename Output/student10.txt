@@ -1,4 +1,0 @@
-student_id	<->	student_name	<->	email	<->	phoneNumber
-101	<->	AadilNew	<->	manjinder@gmail.com	<->	1234
-10000	<->	Manjinder	<->	manjinder@gmail.com	<->	1234
-21	<->	AdityaNew	<->	aditya@gmail.com	<->	1234

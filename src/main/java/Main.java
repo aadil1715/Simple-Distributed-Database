@@ -1,7 +1,6 @@
 import ERDGenerator.ERD;
 import SQLDump.DataDump;
 import dataLogs.DataLogs;
-import queryValidator.CreateValidator;
 import userAuthentication.UserAuthentication;
 
 import java.io.IOException;

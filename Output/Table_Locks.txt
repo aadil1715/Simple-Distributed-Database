@@ -1,7 +1,3 @@
-Manjinder student10 false
-Manjinder student20 false
-Manjinder student30 false
-Manjinder student30 false
-Manjinder student20 false
-Manjinder student30 false
-Manjinder student30 false
+Manjinder monitor1 FALSE
+Manjinder student1 FALSE
+Manjinder student2 FALSE
