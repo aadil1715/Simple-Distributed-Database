@@ -8,3 +8,6 @@
 (Manjinder)=>DUPLICATE error!! Cannot INSERT into : student30 table.
 (Manjinder)=>Query Entered: Insert into student30(student_id, student_name, email, phoneNumber) values(3,Manjinder,manjinder@gmail.com,1234);
 (Manjinder)=>Data Inserted Successfully in : student30 table
+(Manjinder)=>Error!!.... Query: Select * from student30;is not appropriate SQL Query
+(Manjinder)=>Query Entered: SELECT * from student30;
+(Manjinder)=>Query Entered: SELECT student_id from student30;
