@@ -1,25 +1,86 @@
-(Manjinder)=>Query Entered: CREATE TABLE monitor1 (monitor_id INT , monitor_name VARCHAR, email VARCHAR, phoneNumber VARCHAR, PRIMARY_KEY (monitor_id));
-(Manjinder)=> TABLE: monitor1 is inserted in Data Dictionary.(Manjinder)=>monitor1: is created 
-(Manjinder)=>Query Entered: CREATE TABLE student1(student_id INT NOT_NULL ,student_name VARCHAR NOT_NULL, email VARCHAR NOT_NULL, phoneNumber VARCHAR, PRIMARY_KEY (student_id), CONSTRAINT fk_monitor FOREIGN_KEY (monitor_Id) REFERENCES monitor1(ID));
-(Manjinder)=>student1: is created 
-(Manjinder)=>Query Entered: Insert into monitor1(monitor_id, monitor_name, email, phoneNumber) values(1,Aditya,aditya@gmail.com,4567);
-(Manjinder)=>Data Inserted Successfully in : monitor1 table
-(Manjinder)=>Query Entered: Insert into monitor1(monitor_id, monitor_name, email, phoneNumber) values(2,Aditya,aditya@gmail.com,4567);
-(Manjinder)=>Data Inserted Successfully in : monitor1 table
-(Manjinder)=>Query Entered: Insert into monitor1(monitor_id, monitor_name, email, phoneNumber) values(3,Aditya,aditya@gmail.com,4567);
-(Manjinder)=>Query Entered: Insert into monitor1(monitor_id, monitor_name, email, phoneNumber) values(4,Aditya,aditya@gmail.com,4567);
-(Manjinder)=>Data Inserted Successfully in : monitor1 table
-(Manjinder)=>Query Entered: Insert into monitor1(monitor_id, monitor_name, email, phoneNumber) values(5,Aditya,aditya@gmail.com,4567);
-(Manjinder)=>Query Entered: Insert into monitor1(monitor_id, monitor_name, email, phoneNumber) values(6,Aditya,aditya@gmail.com,4567);
-(Manjinder)=>Data Inserted Successfully in : monitor1 table
-(Manjinder)=>Query Entered: Insert into student1(student_id, student_name, email, phoneNumber) values(1,Aditya,aditya@gmail.com,4567);
-(Manjinder)=>Data Inserted Successfully in : student1 table
-(Manjinder)=>Query Entered: Insert into monitor1(monitor_id, monitor_name, email, phoneNumber) values(23,Aditya,aditya@gmail.com,4567);
-(Manjinder)=>Data Inserted Successfully in : monitor1 table
-(Manjinder)=>Error!!.... Query: CREATE TABLE student2 (student_id INT NOT_NULL ,student_name VARCHAR NOT_NULL, email VARCHAR NOT_NULL, phoneNumber VARCHAR, PRIMARY_KEY (student_id), CONSTRAINT fk_monitor FOREIGN_KEY (monitor_Id) REFERENCES monitor2(ID))is not appropriate SQL Query
-(Manjinder)=>Query Entered: CREATE TABLE student2 (student_id INT NOT_NULL ,student_name VARCHAR NOT_NULL, email VARCHAR NOT_NULL, phoneNumber VARCHAR, PRIMARY_KEY (student_id), CONSTRAINT fk_monitor FOREIGN_KEY (monitor_Id) REFERENCES monitor2(ID));
-(Manjinder)=>student2: is created 
-(Manjinder)=>Query Entered: Insert into student2(student_id, student_name, email, phoneNumber) values(10,Aditya,aditya@gmail.com,4567);
-(Manjinder)=>Data Inserted Successfully in : student2 table
-(Manjinder)=>Query Entered: Insert into student2(student_id, student_name, email, phoneNumber) values(101,Aditya,aditya@gmail.com,4567);
-(Manjinder)=>Data Inserted Successfully in : student2 table
+(Manjinder)=>Query Entered: CREATE TABLE student20 (student_id INT NOT_NULL ,student_name VARCHAR NOT_NULL, email VARCHAR NOT_NULL, phoneNumber VARCHAR, PRIMARY_KEY (student_id), CONSTRAINT fk_monitor FOREIGN_KEY (monitor_Id) REFERENCES monitor(ID));
+(Manjinder)=>student20: is created (Manjinder)=>Query Entered: CREATE TABLE student30 (student_id INT NOT_NULL ,student_name VARCHAR NOT_NULL, email VARCHAR NOT_NULL, phoneNumber VARCHAR, PRIMARY_KEY (student_id), CONSTRAINT fk_monitor FOREIGN_KEY (monitor_Id) REFERENCES monitor(ID));
+(Manjinder)=>student30: is created (Manjinder)=>Query Entered: Insert into student30(student_id, student_name, email, phoneNumber) values(1,Manjinder,manjinder@gmail.com,1234);
+(Manjinder)=>Data Inserted Successfully in : student30 table
+(Manjinder)=>Query Entered: Insert into student30(student_id, student_name, email, phoneNumber) values(2,Manjinder,manjinder@gmail.com,1234);
+(Manjinder)=>Data Inserted Successfully in : student30 table
+(Manjinder)=>Query Entered: Insert into student30(student_id, student_name, email, phoneNumber) values(1,Manjinder,manjinder@gmail.com,1234);
+(Manjinder)=>DUPLICATE error!! Cannot INSERT into : student30 table.
+(Manjinder)=>Query Entered: Insert into student30(student_id, student_name, email, phoneNumber) values(3,Manjinder,manjinder@gmail.com,1234);
+(Manjinder)=>Data Inserted Successfully in : student30 table
+(Manjinder)=>Error!!.... Query: Select * from student30;is not appropriate SQL Query
+(Manjinder)=>Query Entered: SELECT * from student30;
+(Manjinder)=>Query Entered: SELECT student_id from student30;
+(Manjinder)=>Query Entered: Insert into student30(student_id, student_name, email, phoneNumber) values(4,Manjinder,manjinder@gmail.com,1234);
+(Manjinder)=>Data Inserted Successfully in : student30 table
+(Manjinder)=>Query Entered: Insert into student30(student_id, student_name, email, phoneNumber) values(4,Manjinder,manjinder@gmail.com,1234);
+(Manjinder)=>DUPLICATE error!! Cannot INSERT into : student30 table.
+(Manjinder)=>Query Entered: Insert into student30(student_id, student_name, email, phoneNumber) values(5,Manjinder,manjinder@gmail.com,1234);
+(Manjinder)=>Data Inserted Successfully in : student30 table
+(Mnjinder)=>Query Entered: Insert into student30(student_id, student_name, email, phoneNumber) values(11,Manjinder,manjinder@gmail.com,1234);
+(Mnjinder)=>Data Inserted Successfully in : student30 table
+(Manjinder)=>Query Entered: Insert into student30(student_id, student_name, email, phoneNumber) values(10,Manjinder,manjinder@gmail.com,1234);
+(Manjinder)=>Data Inserted Successfully in : student30 table
+(Manjinder)=>Query Entered: Insert into student30(student_id, student_name, email, phoneNumber) values(20,Manjinder,manjinder@gmail.com,1234);
+(Manjinder)=>Query Entered: Insert into student30(student_id, student_name, email, phoneNumber) values(100,Manjinder,manjinder@gmail.com,1234);
+(Manjinder)=>Data Inserted Successfully in : student30 table
+(Manjinder)=>Query Entered: Insert into student20(student_id, student_name, email, phoneNumber) values(10,Manjinder,manjinder@gmail.com,1234);
+(Manjinder)=>Data Inserted Successfully in : student20 table
+(Manjinder)=>Query Entered: Insert into student30(student_id, student_name, email, phoneNumber) values(1000,Manjinder,manjinder@gmail.com,1234);
+(Manjinder)=>Data Inserted Successfully in : student30 table
+(Manjinder)=>Query Entered: Insert into student20(student_id, student_name, email, phoneNumber) values(1000,Manjinder,manjinder@gmail.com,1234);
+(Manjinder)=>Data Inserted Successfully in : student20 table
+(Manjinder)=>Query Entered: Insert into student10(student_id, student_name, email, phoneNumber) values(101,Manjinder,manjinder@gmail.com,1234);
+(Manjinder)=>Data Inserted Successfully in : student10 table
+(Manjinder)=>Query Entered: Insert into student10(student_id, student_name, email, phoneNumber) values(10000,Manjinder,manjinder@gmail.com,1234);
+(Manjinder)=>Data Inserted Successfully in : student10 table
+(Manjinder)=>Query Entered: Insert into student30(student_id, student_name, email, phoneNumber) values(21,Manjinder,manjinder@gmail.com,1234);
+(Manjinder)=>Data Inserted Successfully in : student30 table
+(Manjinder)=>Query Entered: Insert into student20(student_id, student_name, email, phoneNumber) values(21,Manjinder,manjinder@gmail.com,1234);
+(Manjinder)=>Data Inserted Successfully in : student20 table
+(Manjinder)=>Query Entered: Insert into student10(student_id, student_name, email, phoneNumber) values(21,Manjinder,manjinder@gmail.com,1234);
+(Manjinder)=>Data Inserted Successfully in : student10 table
+(aadil)=>Query Entered: SELECT * from student10
+(aadil)=>Query Entered: SELECT student_id from student10
+(aadil)=>Query Entered: SELECT * from student10
+(aadil)=>Query Entered: SELECT * from student10
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Query Entered: SELECT * from student10
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Query Entered: UPDATE student10 SET student_name=Aditya WHERE student_id=21
+(aadil)=>Query executed successfully : Updated records successfully!
+(aadil)=>Query Entered: DELETE FROM student30 WHERE student_id=2
+(aadil)=>Query executed successfully : Deleted records successfully!
+(aadil)=>Query Entered: SELECT * from student10;
+(aadil)=>Error!!.... Query: No table found!
+(aadil)=>Query Entered: SELECT * from student10
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Query Entered: SELECT * from student10
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Query Entered: SELECT student_id,email from student10
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Query Entered: SELECT * from student10 where student_name=Aadil
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Query Entered: SELECT student_id,email from student10 where student_name=Aadil
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Query Entered: UPDATE student10 SET student_name=AadilNew where student_id=101
+(aadil)=>Query executed successfully : Updated records successfully!
+(aadil)=>Query Entered: UPDATE student10 SET student_name=AdityaNew,email=aditya@gmail.com where student_id=21
+(aadil)=>Query executed successfully : Updated records successfully!
+(aadil)=>Query Entered: DELETE FROM student30 WHERE student_id=5
+(aadil)=>Query executed successfully : Deleted records successfully!
