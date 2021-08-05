@@ -1,0 +1,5 @@
+student_id	<->	student_name	<->	email	<->	phoneNumber
+1	<->	John	<->	john@gmail.com	<->	1234
+11	<->	John	<->	john@gmail.com	<->	1234
+111	<->	John	<->	john@gmail.com	<->	1234
+1111	<->	John	<->	john@gmail.com	<->	1234

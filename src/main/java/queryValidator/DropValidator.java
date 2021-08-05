@@ -22,9 +22,8 @@ public class DropValidator {
     private static final Pattern DROP_REGEX =
             Pattern.compile("(?i)(DROP\\sTABLE\\s(\\w+);)");;
 
-    public static void validateDrop(String username, List<String> list) throws IOException {
+    public static void validateDrop(String username) throws IOException {
         Matcher dropTableSQL = DROP_REGEX.matcher(query);
-        list.add(query);
         if (dropTableSQL.find()) {
             queryLogsFile.append("(").append(username).append(")=>").append("Query Entered: ").append(query).append("\n");
             Drop.dropParser(dropTableSQL, username,queryLogsFile);
