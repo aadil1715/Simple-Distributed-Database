@@ -14,7 +14,8 @@ import static queryParser.Insert.log;
 
 public class UpdateV1 {
 
-  public static void parseUpdate(Matcher sqlQuery, String username) throws IOException {
+  public static void parseUpdate(Matcher sqlQuery, String username,
+                                 FileWriter queryLogsFile) throws IOException {
     List<String> li = Arrays.asList(sqlQuery.group().split(" "));
     String tableName = li.get(1);
     String colNames = li.get(3);
@@ -25,11 +26,12 @@ public class UpdateV1 {
     } else {
       liColnames = Arrays.asList(colNames);
     }
-    updateOperation(tableName, liColnames, whereCondition);
+    updateOperation(tableName, liColnames, whereCondition, queryLogsFile,username);
+
   }
 
   public static void updateOperation(String tableName, List<String> liColNames
-      , String whereCondition) throws IOException {
+      , String whereCondition,FileWriter queryLogsFile,String username) throws IOException {
     String whereColumn = whereCondition.split("=")[0];
     String whereValue = whereCondition.split("=")[1];
     File tableFile = new File("output/" + tableName + ".txt");
@@ -66,6 +68,8 @@ public class UpdateV1 {
       if (whereColIndex == -1) {
         log.logger(Level.SEVERE,
             "No column found! for where column");
+        queryLogsFile.append("(").append(username).append(")=>").append("Error!!.... Query: ")
+            .append("No column found! for where column").append("\n");
       } else {
 
         for (int i = 0; i < liColNames.size(); i++) {
@@ -106,6 +110,11 @@ public class UpdateV1 {
       }
       fileWriter.flush();
       System.out.println("Updated records Successfully");
+      queryLogsFile.append("(").append(username).append(")=>").append("Query " +
+          "executed successfully " +
+          ": ")
+          .append("Updated records successfully!").append("\n");
+      queryLogsFile.flush();
     }
 
 

@@ -14,14 +14,17 @@ import static queryParser.Insert.log;
 
 public class Delete {
 
-  public static void parseDelete(Matcher sqlQuery, String username) throws IOException {
+  public static void parseDelete(Matcher sqlQuery, String username,
+                                 FileWriter queryLogsFile) throws IOException {
     List<String> li = Arrays.asList(sqlQuery.group().split(" "));
     String tableName = li.get(2);
     String whereCondition = li.get(4);
-    deleteOperation(tableName, whereCondition);
+    deleteOperation(tableName, whereCondition,username,queryLogsFile);
   }
 
-  public static void deleteOperation(String tableName, String whereCondition) throws IOException {
+  public static void deleteOperation(String tableName, String whereCondition,
+                                     String username, FileWriter queryLogsFile
+                                     ) throws IOException {
     String whereColumn = whereCondition.split("=")[0];
     String whereValue = whereCondition.split("=")[1];
     File tableFile = new File("output/" + tableName + ".txt");
@@ -52,6 +55,8 @@ public class Delete {
       if (whereColIndex == -1) {
         log.logger(Level.SEVERE,
             "No column found! for where column");
+        queryLogsFile.append("(").append(username).append(")=>").append("Error!!.... Query: ")
+            .append("No column found! for where column").append("\n");
       } else {
         for (int a = 1; a < fileData.size(); a++) {
           if (fileData.get(a).get(whereColIndex).equals(whereValue)) {
@@ -74,6 +79,11 @@ public class Delete {
       fileWriter.flush();
 
       System.out.println("Deleted Records Successfully");
+      queryLogsFile.append("(").append(username).append(")=>").append("Query " +
+          "executed successfully " +
+          ": ")
+          .append("Deleted records successfully!").append("\n");
+      queryLogsFile.flush();
     }
   }
 }

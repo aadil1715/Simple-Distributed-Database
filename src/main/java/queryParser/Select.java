@@ -12,7 +12,8 @@ import static queryParser.Create.log;
 
 public class Select {
 
-  public static void selectParser(Matcher sqlQuery, String username) {
+  public static void selectParser(Matcher sqlQuery, String username,
+                                  FileWriter queryLogsFile) throws IOException {
     List<String> li = Arrays.asList(sqlQuery.group().split(" "));
     String tableName = li.get(3);
     String colnames = li.get(1);
@@ -22,29 +23,31 @@ public class Select {
       String whereValue = whereCondition.split("=")[1];
       if (colnames.equals("*")) {
         // ADD ACTION to get all columns
-        getAllRows(tableName, whereCondition);
+        getAllRows(tableName, whereCondition,username,queryLogsFile);
       } else {
         String[] allcolnames = colnames.split(",");
         List<String> licolnames = Arrays.asList(allcolnames);
-        getSpecificRows(tableName, licolnames, whereCondition);
+        getSpecificRows(tableName, licolnames, whereCondition,username,queryLogsFile);
       }
     } else {
       if (colnames.equals("*")) {
         // ADD ACTION to get all columns
-        getAllRows(tableName, "None");
+        getAllRows(tableName, "None",username,queryLogsFile);
 
       } else {
         String[] allcolnames = colnames.split(",");
         List<String> licolnames = Arrays.asList(allcolnames);
-        getSpecificRows(tableName, licolnames, "None");
+        getSpecificRows(tableName, licolnames, "None",username,queryLogsFile);
       }
     }
+    queryLogsFile.flush();
   }
 
 
   public static void getSpecificRows(String tableName,
                                      List<String> liColumnNames,
-                                     String whereCondition) {
+                                     String whereCondition, String username,
+                                     FileWriter queryLogsFile) {
     File tableFile = new File("output/" + tableName + ".txt");
     if (whereCondition.equals("None")) {
       if (tableFile.exists()) {
@@ -81,17 +84,23 @@ public class Select {
               if(dataFound.size()!=0) {
                 System.out.println(dataFound);
                 dataFound = new ArrayList<>();
+                queryLogsFile.append("(").append(username).append(")=>").append("Select Query executed successfully: ")
+                    .append("Rows found!").append("\n");
               }
               else{
                 log.logger(Level.SEVERE,
                     "No matching rows found!");
+                queryLogsFile.append("(").append(username).append(")=>").append("Error!!.... Query: ")
+                    .append("No matching rows found!").append("\n");
               }
             }
 
 
           } else {
             log.logger(Level.SEVERE,
-                "No column found!");
+                "No column found! for where column");
+            queryLogsFile.append("(").append(username).append(")=>").append("Error!!.... Query: ")
+                .append("No column found! for where column").append("\n");
           }
 
           //Got the column Indexes
@@ -123,6 +132,8 @@ public class Select {
           if (z == -1) {
             log.logger(Level.SEVERE,
                 "No column found! for where column");
+            queryLogsFile.append("(").append(username).append(")=>").append("Error!!.... Query: ")
+                .append("No column found! for where column").append("\n");
           }
           for (int i = 0; i < liColumnNames.size(); i++) {
             if (line.contains(liColumnNames.get(i))) {
@@ -157,15 +168,21 @@ public class Select {
               if(dataFound.size()!=0) {
                 System.out.println(dataFound);
                 dataFound = new ArrayList<>();
+                queryLogsFile.append("(").append(username).append(")=>").append("Select Query executed successfully: ")
+                    .append("Rows found!").append("\n");
               }
               else{
                 log.logger(Level.SEVERE,
                     "No matching rows found!");
+                queryLogsFile.append("(").append(username).append(")=>").append("Error!!.... Query: ")
+                    .append("No matching rows found!").append("\n");
               }
             }
           } else {
             log.logger(Level.SEVERE,
-                "No column found!");
+                "No column found! for where column");
+            queryLogsFile.append("(").append(username).append(")=>").append("Error!!.... Query: ")
+                .append("No column found! for where column").append("\n");
           }
 
           //Got the column Indexes
@@ -182,7 +199,8 @@ public class Select {
   }
 
 
-  public static void getAllRows(String tableName, String whereCondition) {
+  public static void getAllRows(String tableName, String whereCondition,String username,
+                                FileWriter queryLogsFile) throws IOException {
     File tableFile = new File("output/" + tableName + ".txt");
     if (whereCondition.equals("None")) {
       if (tableFile.exists()) {
@@ -190,12 +208,17 @@ public class Select {
           String line = null;
           while ((line = br.readLine()) != null) {
             System.out.println(line);
+            queryLogsFile.append("(").append(username).append(")=>").append("Select Query executed successfully: ")
+                .append("Rows found!").append("\n");
           }
         } catch (Exception e) {
           e.printStackTrace();
         }
       } else {
-        log.logger(Level.SEVERE, "No table found!");
+        log.logger(Level.SEVERE,
+            "No table found!");
+        queryLogsFile.append("(").append(username).append(")=>").append("Error!!.... Query: ")
+            .append("No table found!").append("\n");
       }
     } else {
       String whereColumn = whereCondition.split("=")[0];
@@ -230,6 +253,8 @@ public class Select {
                 List<String> templi = Arrays.asList(strArr1);
                 flag = 1;
                 System.out.println(templi);
+                queryLogsFile.append("(").append(username).append(")=>").append("Select Query executed successfully: ")
+                    .append("Rows found!").append("\n");
               }
             }
 
@@ -237,16 +262,23 @@ public class Select {
             } else {
               log.logger(Level.SEVERE,
                   "No matching rows found!");
+              queryLogsFile.append("(").append(username).append(")=>").append("Error!!.... Query: ")
+                  .append("No matching rows found!").append("\n");
             }
           } else {
             log.logger(Level.SEVERE,
-                "No column named" + whereColumn + "found!");
+                "No column found! for where column");
+            queryLogsFile.append("(").append(username).append(")=>").append("Error!!.... Query: ")
+                .append("No column found! for where column").append("\n");
           }
         } catch (Exception e) {
           e.printStackTrace();
         }
       } else {
-        log.logger(Level.SEVERE, "No table found!");
+        log.logger(Level.SEVERE,
+            "No table found!");
+        queryLogsFile.append("(").append(username).append(")=>").append("Error!!.... Query: ")
+            .append("No table found!").append("\n");
       }
     }
   }

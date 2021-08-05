@@ -40,3 +40,47 @@
 (Manjinder)=>Data Inserted Successfully in : student20 table
 (Manjinder)=>Query Entered: Insert into student10(student_id, student_name, email, phoneNumber) values(21,Manjinder,manjinder@gmail.com,1234);
 (Manjinder)=>Data Inserted Successfully in : student10 table
+(aadil)=>Query Entered: SELECT * from student10
+(aadil)=>Query Entered: SELECT student_id from student10
+(aadil)=>Query Entered: SELECT * from student10
+(aadil)=>Query Entered: SELECT * from student10
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Query Entered: SELECT * from student10
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Query Entered: UPDATE student10 SET student_name=Aditya WHERE student_id=21
+(aadil)=>Query executed successfully : Updated records successfully!
+(aadil)=>Query Entered: DELETE FROM student30 WHERE student_id=2
+(aadil)=>Query executed successfully : Deleted records successfully!
+(aadil)=>Query Entered: SELECT * from student10;
+(aadil)=>Error!!.... Query: No table found!
+(aadil)=>Query Entered: SELECT * from student10
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Query Entered: SELECT * from student10
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Query Entered: SELECT student_id,email from student10
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Query Entered: SELECT * from student10 where student_name=Aadil
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Query Entered: SELECT student_id,email from student10 where student_name=Aadil
+(aadil)=>Select Query executed successfully: Rows found!
+(aadil)=>Query Entered: UPDATE student10 SET student_name=AadilNew where student_id=101
+(aadil)=>Query executed successfully : Updated records successfully!
+(aadil)=>Query Entered: UPDATE student10 SET student_name=AdityaNew,email=aditya@gmail.com where student_id=21
+(aadil)=>Query executed successfully : Updated records successfully!
+(aadil)=>Query Entered: DELETE FROM student30 WHERE student_id=5
+(aadil)=>Query executed successfully : Deleted records successfully!
