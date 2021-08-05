@@ -1,5 +1,4 @@
 package queryParser;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,7 +10,7 @@ import java.util.regex.Matcher;
 import static queryParser.Create.log;
 
 public class Select {
-  public static void selectParser(Matcher sqlQuery,String username){
+  public static void selectParser(Matcher sqlQuery,String username, FileWriter queryFileLogs){
     List<String> li = Arrays.asList(sqlQuery.group().split(" "));
     String tableName = li.get(3);
     String colnames = li.get(1);
@@ -25,7 +24,7 @@ public class Select {
       } else {
         String[] allcolnames = colnames.split(",");
         List<String> licolnames = Arrays.asList(allcolnames);
-        getSpecificRows(tableName,licolnames,whereCondition);
+        getSpecificRows(tableName,licolnames,whereCondition,queryFileLogs,username);
       }
     }
     else{
@@ -36,15 +35,13 @@ public class Select {
       } else {
         String[] allcolnames = colnames.split(",");
         List<String> licolnames = Arrays.asList(allcolnames);
-        getSpecificRows(tableName,licolnames,"None");
+        getSpecificRows(tableName,licolnames,"None",queryFileLogs,username);
       }
     }
   }
 
-
-  public static void getSpecificRows(String tableName,
-                                     List<String> liColumnNames,
-                                     String whereCondition) {
+  public static void getSpecificRows(String tableName, List<String> liColumnNames, String whereCondition,
+                                     FileWriter queryFileLogs,String username) {
     File tableFile = new File("output/" + tableName + ".txt");
     if (whereCondition.equals("None")) {
       if (tableFile.exists()) {
@@ -64,7 +61,6 @@ public class Select {
               }
             }
           }
-
           if (colIndexes.size() == liColumnNames.size()) {
             List<String> dataFound = new ArrayList<>();
 
@@ -81,16 +77,10 @@ public class Select {
                 System.out.println(dataFound);
                 dataFound=new ArrayList<>();
               }
-
-
           } else {
             log.logger(Level.SEVERE,
                 "No column found!");
           }
-
-          //Got the column Indexes
-          //System.out.println(colIndexes);
-
         } catch (FileNotFoundException e) {
           e.printStackTrace();
         } catch (IOException e) {
@@ -115,8 +105,9 @@ public class Select {
             }
           }
           if(z==-1){
-            log.logger(Level.SEVERE,
-                "No column found! for where column" );
+            queryFileLogs.append("(").append(username).append(")=>").append("Cannot SELECT from columns of table: ").append(tableName)
+                    .append("\n");
+            log.logger(Level.SEVERE, "No column found! for where column" );
           }
           for (int i = 0; i < liColumnNames.size(); i++) {
             if (line.contains(liColumnNames.get(i))) {
@@ -151,13 +142,11 @@ public class Select {
               System.out.println(dataFound);
             }
           } else {
+            queryFileLogs.append("(").append(username).append(")=>").append("Cannot SELECT from columns of table: ").append(tableName)
+                    .append("\n");
             log.logger(Level.SEVERE,
                 "No column found!");
           }
-
-          //Got the column Indexes
-          //System.out.println(colIndexes);
-
 
         } catch (FileNotFoundException e) {
           e.printStackTrace();

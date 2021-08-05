@@ -31,12 +31,16 @@ public class DBOperations {
                 break;
             case "drop":
                 DropValidator dropValidator=new DropValidator(query,queryLogsFile);
-                dropValidator.validateDrop(username,list);
+                dropValidator.validateDrop(username);
                 break;
-//            case 4:
-//                break;
-//            case 5:
-//                break;
+            case "select":
+                SelectValidator selectValidator=new SelectValidator(query,queryLogsFile);
+                selectValidator.validateSelect(username);
+                break;
+            case "update":
+                UpdateValidator updateValidator=new UpdateValidator(query,queryLogsFile);
+                updateValidator.validateUpdate(username);
+                break;
             }
         }
 

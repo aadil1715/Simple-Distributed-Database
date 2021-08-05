@@ -1,6 +1,5 @@
 package queryValidator;
 import queryParser.Create;
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.logging.Level;
