@@ -187,3 +187,101 @@ Aug 05, 2021 6:59:12 AM dataLogs.DataLogs logger
 WARNING: INVALID Update SQL Query !!
 Aug 05, 2021 6:59:12 AM dataLogs.DataLogs logger
 WARNING: No commands have been executed
+Aug 05, 2021 3:41:28 PM dataLogs.DataLogs logger
+INFO: Login successful
+Aug 05, 2021 3:41:49 PM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 05, 2021 3:41:49 PM dataLogs.DataLogs logger
+INFO: Generating SQL Dump
+Aug 05, 2021 3:42:51 PM dataLogs.DataLogs logger
+INFO: Login successful
+Aug 05, 2021 3:43:06 PM dataLogs.DataLogs logger
+SEVERE: Data cannot be inserted. DUPLICATE Error !!
+Aug 05, 2021 3:43:06 PM dataLogs.DataLogs logger
+INFO: Generating SQL Dump
+Aug 05, 2021 3:44:41 PM dataLogs.DataLogs logger
+INFO: Login successful
+Aug 05, 2021 3:44:56 PM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 05, 2021 3:44:56 PM dataLogs.DataLogs logger
+INFO: Generating SQL Dump
+Aug 05, 2021 3:52:48 PM dataLogs.DataLogs logger
+WARNING: User not registered with the system
+Aug 05, 2021 3:53:19 PM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 05, 2021 3:53:19 PM dataLogs.DataLogs logger
+INFO: Generating SQL Dump
+Aug 05, 2021 4:14:13 PM dataLogs.DataLogs logger
+INFO: Login successful
+Aug 05, 2021 4:14:25 PM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 05, 2021 4:14:25 PM dataLogs.DataLogs logger
+INFO: Generating SQL Dump
+Aug 05, 2021 4:20:48 PM dataLogs.DataLogs logger
+INFO: Login successful
+Aug 05, 2021 4:21:05 PM dataLogs.DataLogs logger
+INFO: Generating SQL Dump
+Aug 05, 2021 4:39:13 PM dataLogs.DataLogs logger
+INFO: Login successful
+Aug 05, 2021 4:39:18 PM dataLogs.DataLogs logger
+WARNING: No commands have been executed
+Aug 05, 2021 4:39:31 PM dataLogs.DataLogs logger
+INFO: Login successful
+Aug 05, 2021 4:40:28 PM dataLogs.DataLogs logger
+INFO: Login successful
+Aug 05, 2021 4:40:41 PM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 05, 2021 4:40:41 PM dataLogs.DataLogs logger
+INFO: Generating SQL Dump
+Aug 05, 2021 4:42:01 PM dataLogs.DataLogs logger
+INFO: Login successful
+Aug 05, 2021 4:42:19 PM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 05, 2021 4:42:19 PM dataLogs.DataLogs logger
+INFO: Generating SQL Dump
+Aug 05, 2021 4:43:02 PM dataLogs.DataLogs logger
+INFO: Login successful
+Aug 05, 2021 4:43:15 PM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 05, 2021 4:43:15 PM dataLogs.DataLogs logger
+INFO: Generating SQL Dump
+Aug 05, 2021 4:43:38 PM dataLogs.DataLogs logger
+INFO: Login successful
+Aug 05, 2021 4:43:50 PM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 05, 2021 4:43:50 PM dataLogs.DataLogs logger
+INFO: Generating SQL Dump
+Aug 05, 2021 4:44:57 PM dataLogs.DataLogs logger
+INFO: Login successful
+Aug 05, 2021 4:45:10 PM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 05, 2021 4:45:10 PM dataLogs.DataLogs logger
+INFO: Generating SQL Dump
+Aug 05, 2021 4:45:33 PM dataLogs.DataLogs logger
+INFO: Login successful
+Aug 05, 2021 4:45:43 PM dataLogs.DataLogs logger
+INFO: Generating SQL Dump
+Aug 05, 2021 4:47:55 PM dataLogs.DataLogs logger
+INFO: Login successful
+Aug 05, 2021 4:48:08 PM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 05, 2021 4:48:08 PM dataLogs.DataLogs logger
+INFO: Generating SQL Dump
+Aug 05, 2021 4:49:26 PM dataLogs.DataLogs logger
+INFO: Login successful
+Aug 05, 2021 4:49:43 PM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 05, 2021 4:49:43 PM dataLogs.DataLogs logger
+INFO: Generating SQL Dump
+Aug 05, 2021 4:50:06 PM dataLogs.DataLogs logger
+INFO: Login successful
+Aug 05, 2021 4:50:21 PM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 05, 2021 4:50:21 PM dataLogs.DataLogs logger
+INFO: Generating SQL Dump
+Aug 05, 2021 4:50:58 PM dataLogs.DataLogs logger
+INFO: Login successful
+Aug 05, 2021 4:51:16 PM dataLogs.DataLogs logger
+INFO: Data Inserted Successfully !!
+Aug 05, 2021 4:51:16 PM dataLogs.DataLogs logger
+INFO: Generating SQL Dump
