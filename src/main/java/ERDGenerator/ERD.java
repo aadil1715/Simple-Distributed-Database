@@ -33,24 +33,25 @@ public class ERD {
             boolean firstLine = true;
             while((line = bufferedReader.readLine()) != null) {
                 if(!firstLine) {
-                   String[] tableColumns = line.split("<==>");
+                    String[] tableColumns = line.split("<==>");
                     String foreignKey_columnName = null;
                     String foreignKey_tableName = null;
-                   String tableName = tableColumns[0];
-                   String[] columns = tableColumns[1].split("<->");
-                   for(int i=0; i<columns.length; i++) {
-                       if(columns[i].contains(foreignKey)) {
-                           //FOREIGN_KEY (FK_COLUMN:fk_monitor,REF_TABLE:monitor);
-                           String[] foreign_key = columns[i].split(",");
-                           foreignKey_columnName = foreign_key[0].split(":")[1];
-                           foreignKey_tableName = foreign_key[1].split(":")[1].replace(");", "");
-                           bufferedWriter.append(tableName).append("("+foreignKey_columnName+")--*----------REFERENCES------------1-->").
-                                   append(foreignKey_tableName).append("\n");
+                    String tableName = tableColumns[0];
+                    String[] columns = tableColumns[1].split("<->");
+                    for(int i=0; i<columns.length; i++) {
+                        if(columns[i].contains(foreignKey)) {
+                            //FOREIGN_KEY (FK_COLUMN:fk_monitor,REF_TABLE:monitor);
+                            String[] foreign_key = columns[i].split(",");
+                            foreignKey_columnName = foreign_key[0].split(":")[1];
+                            foreignKey_tableName = foreign_key[1].split(":")[1].replace(");", "");
+                            bufferedWriter.append(line).append("\n");
+                            bufferedWriter.append(tableName).append("("+foreignKey_columnName+")--*----------REFERENCES------------1-->").
+                                    append(foreignKey_tableName).append("\n");
                         }
-                   }
-                   if(foreignKey_columnName == null && foreignKey_tableName == null) {
-                       bufferedWriter.append(tableName).append("\n");
-                   }
+                    }
+                    if(foreignKey_columnName == null && foreignKey_tableName == null) {
+                        bufferedWriter.append(line).append("\n");
+                    }
                 }
                 firstLine = false;
             }
