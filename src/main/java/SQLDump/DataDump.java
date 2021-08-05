@@ -14,7 +14,7 @@ public class DataDump {
 
     public static void sqlDump(List<String> list) {
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName,true));
             for (String query : list) {
                 if (query.matches(CREATE_REGEX)) {
                     Matcher matcher = Pattern.compile(CREATE_REGEX).matcher(query);

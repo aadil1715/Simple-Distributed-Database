@@ -1,0 +1,11 @@
+student_id	<->	student_name	<->	email	<->	phoneNumber
+1	<->	Manjinder	<->	manjinder@gmail.com	<->	1234
+2	<->	Manjinder	<->	manjinder@gmail.com	<->	1234
+3	<->	Manjinder	<->	manjinder@gmail.com	<->	1234
+4	<->	Manjinder	<->	manjinder@gmail.com	<->	1234
+5	<->	Manjinder	<->	manjinder@gmail.com	<->	1234
+11	<->	Manjinder	<->	manjinder@gmail.com	<->	1234
+10	<->	Manjinder	<->	manjinder@gmail.com	<->	1234
+100	<->	Manjinder	<->	manjinder@gmail.com	<->	1234
+1000	<->	Manjinder	<->	manjinder@gmail.com	<->	1234
+21	<->	Manjinder	<->	manjinder@gmail.com	<->	1234

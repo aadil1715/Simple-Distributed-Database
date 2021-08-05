@@ -1,0 +1,4 @@
+student_id	<->	student_name	<->	email	<->	phoneNumber
+10	<->	Manjinder	<->	manjinder@gmail.com	<->	1234
+1000	<->	Manjinder	<->	manjinder@gmail.com	<->	1234
+21	<->	Manjinder	<->	manjinder@gmail.com	<->	1234

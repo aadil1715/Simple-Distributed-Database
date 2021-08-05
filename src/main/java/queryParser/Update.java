@@ -1,5 +1,4 @@
 package queryParser;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -13,8 +12,7 @@ import java.util.regex.Matcher;
 import static queryParser.Create.log;
 
 public class Update {
-
-  public static void parseUpdate(Matcher sqlQuery, String username) throws IOException {
+  public static void parseUpdate(Matcher sqlQuery, String username,FileWriter queryLogsFile) throws IOException {
     List<String> li = Arrays.asList(sqlQuery.group().split(" "));
       String tableName=li.get(1);
       String colNames = li.get(3);
@@ -25,48 +23,16 @@ public class Update {
       }else{
         liColnames = Arrays.asList(colNames);
       }
-      updateOperation(tableName,liColnames,whereCondition);
+      updateOperation(tableName,liColnames,whereCondition,queryLogsFile,username);
   }
 
-  public static void updateOperation(String tableName,List<String> liColNames
-      ,String whereCondition) throws IOException {
+  public static void updateOperation(String tableName,List<String> liColNames,String whereCondition,
+                                     FileWriter queryLogsFile,String username) throws IOException {
     String whereColumn = whereCondition.split("=")[0];
     String whereValue = whereCondition.split("=")[1];
     File tableFile = new File("output/" + tableName + ".txt");
     String toUpdate = liColNames.get(0).split("=")[1];
     if((tableFile.exists())){
-//      Scanner sc = new Scanner(tableFile);
-//      //Finding col Index of where condition and column to update.
-//      String line = sc.nextLine();
-//      List<String> updateColIndexes = new ArrayList<>();
-//      int whereColIndex = -1;
-//      String[] strArr = line.replaceAll("\t", "").split("<->");
-//      for(int i=0;i<strArr.length;i++){
-//        if(strArr[i].equals(whereColumn)){
-//          whereColIndex = i;
-//          break;
-//        }
-//      }
-//
-//      if(whereColIndex==-1){
-//        log.logger(Level.SEVERE,
-//            "No column found! for where column" );
-//      }
-//      else{
-//
-//        for (int i = 0; i < liColNames.size(); i++) {
-//          if (line.contains(liColNames.get(i))) {
-//            for (int j = 0; j < strArr.length; j++) {
-//              if (strArr[j].equals(liColNames.get(i))) {
-//                updateColIndexes.add(String.valueOf(j));
-//                break;
-//              }
-//            }
-//          }
-//        }
-//        sc.close();
-
-
         Scanner sc1 = new Scanner(tableFile);
         List<String> fileContent = new ArrayList<>();
         while(sc1.hasNextLine()){
@@ -99,11 +65,11 @@ public class Update {
           count++;
         }
         fileWriter.flush();
-
       }
-
     else{
-      log.logger(Level.SEVERE, "No table found!");
+        queryLogsFile.append("(").append(username).append(")=>").append("Cannot SELECT from columns of table: ").append(tableName)
+                .append("\n");
+        log.logger(Level.SEVERE, "No table found!");
     }
   }
 
