@@ -3,6 +3,7 @@ package queryValidator;
 import dataLogs.DataLogs;
 import queryParser.Select;
 import queryParser.Update;
+import queryParser.UpdateV1;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -35,7 +36,7 @@ public class UpdateValidator {
 //      System.out.println(selectTableSQL.find());
       if (updateTableSQL.find()) {
         //ADD ACTION
-        Update.parseUpdate(updateTableSQL,username);
+        UpdateV1.parseUpdate(updateTableSQL,username);
       } else {
         log.logger(Level.WARNING, "INVALID Update SQL Query !!");
       }

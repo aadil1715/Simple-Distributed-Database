@@ -37,3 +37,11 @@ Aug 05, 2021 12:12:47 AM dataLogs.DataLogs logger
 INFO: Login successful
 Aug 05, 2021 12:13:13 AM dataLogs.DataLogs logger
 INFO: Table Dropped successfully !!!
+Aug 05, 2021 4:45:40 PM dataLogs.DataLogs logger
+WARNING: INVALID Update SQL Query !!
+Aug 05, 2021 5:41:26 PM dataLogs.DataLogs logger
+SEVERE: No table found!
+Aug 05, 2021 5:44:25 PM dataLogs.DataLogs logger
+SEVERE: No matching rows found!
+Aug 05, 2021 5:47:58 PM dataLogs.DataLogs logger
+SEVERE: No matching rows found!

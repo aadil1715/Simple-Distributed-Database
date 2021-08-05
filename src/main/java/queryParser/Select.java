@@ -11,32 +11,32 @@ import java.util.regex.Matcher;
 import static queryParser.Create.log;
 
 public class Select {
-  public static void selectParser(Matcher sqlQuery,String username){
+
+  public static void selectParser(Matcher sqlQuery, String username) {
     List<String> li = Arrays.asList(sqlQuery.group().split(" "));
     String tableName = li.get(3);
     String colnames = li.get(1);
-    if(li.size()>4) {
+    if (li.size() > 4) {
       String whereCondition = li.get(5);
       String whereColumn = whereCondition.split("=")[0];
       String whereValue = whereCondition.split("=")[1];
       if (colnames.equals("*")) {
         // ADD ACTION to get all columns
-      getAllRows(tableName,whereCondition);
+        getAllRows(tableName, whereCondition);
       } else {
         String[] allcolnames = colnames.split(",");
         List<String> licolnames = Arrays.asList(allcolnames);
-        getSpecificRows(tableName,licolnames,whereCondition);
+        getSpecificRows(tableName, licolnames, whereCondition);
       }
-    }
-    else{
+    } else {
       if (colnames.equals("*")) {
         // ADD ACTION to get all columns
-        getAllRows(tableName,"None");
+        getAllRows(tableName, "None");
 
       } else {
         String[] allcolnames = colnames.split(",");
         List<String> licolnames = Arrays.asList(allcolnames);
-        getSpecificRows(tableName,licolnames,"None");
+        getSpecificRows(tableName, licolnames, "None");
       }
     }
   }
@@ -68,19 +68,25 @@ public class Select {
           if (colIndexes.size() == liColumnNames.size()) {
             List<String> dataFound = new ArrayList<>();
 
-              //ADD SELECTING LOGIC FOR SPECIFIC COLUMNS
-              String line1 = null;
-              Scanner sc = new Scanner(tableFile);
-              while (sc.hasNext()) {
-                line1 = sc.nextLine();
-                String[] strArr1 = line1.replaceAll("\\s+", "").split(
-                    "<->");
-                for (int k = 0; k < colIndexes.size(); k++) {
-                  dataFound.add(strArr1[Integer.parseInt(colIndexes.get(k))]);
-                }
-                System.out.println(dataFound);
-                dataFound=new ArrayList<>();
+            //ADD SELECTING LOGIC FOR SPECIFIC COLUMNS
+            String line1 = null;
+            Scanner sc = new Scanner(tableFile);
+            while (sc.hasNext()) {
+              line1 = sc.nextLine();
+              String[] strArr1 = line1.replaceAll("\\s+", "").split(
+                  "<->");
+              for (int k = 0; k < colIndexes.size(); k++) {
+                dataFound.add(strArr1[Integer.parseInt(colIndexes.get(k))]);
               }
+              if(dataFound.size()!=0) {
+                System.out.println(dataFound);
+                dataFound = new ArrayList<>();
+              }
+              else{
+                log.logger(Level.SEVERE,
+                    "No matching rows found!");
+              }
+            }
 
 
           } else {
@@ -106,17 +112,17 @@ public class Select {
           List<String> colIndexes = new ArrayList<>();
           String line = null;
           line = br.readLine();
-          int z=-1;
+          int z = -1;
           String[] strArr = line.replaceAll("\t", "").split("<->");
           for (int j = 0; j < strArr.length; j++) {
             if (strArr[j].equals(whereColumn)) {
-              z=j;
+              z = j;
               break;
             }
           }
-          if(z==-1){
+          if (z == -1) {
             log.logger(Level.SEVERE,
-                "No column found! for where column" );
+                "No column found! for where column");
           }
           for (int i = 0; i < liColumnNames.size(); i++) {
             if (line.contains(liColumnNames.get(i))) {
@@ -142,13 +148,20 @@ public class Select {
                     "<->");
                 if (z != -1) {
                   if (strArr1[z].equals(whereValue)) {
-                    for (int k = 0; k <colIndexes.size(); k++) {
+                    for (int k = 0; k < colIndexes.size(); k++) {
                       dataFound.add(strArr1[Integer.parseInt(colIndexes.get(k))]);
                     }
                   }
                 }
               }
-              System.out.println(dataFound);
+              if(dataFound.size()!=0) {
+                System.out.println(dataFound);
+                dataFound = new ArrayList<>();
+              }
+              else{
+                log.logger(Level.SEVERE,
+                    "No matching rows found!");
+              }
             }
           } else {
             log.logger(Level.SEVERE,
@@ -169,29 +182,6 @@ public class Select {
   }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   public static void getAllRows(String tableName, String whereCondition) {
     File tableFile = new File("output/" + tableName + ".txt");
     if (whereCondition.equals("None")) {
@@ -207,8 +197,7 @@ public class Select {
       } else {
         log.logger(Level.SEVERE, "No table found!");
       }
-    }
-    else{
+    } else {
       String whereColumn = whereCondition.split("=")[0];
       String whereValue = whereCondition.split("=")[1];
       if (tableFile.exists()) {
@@ -218,46 +207,41 @@ public class Select {
           String line = null;
           int flag = 0;
           line = br.readLine();
-            // COlumn exists
-            if(line.contains(whereColumn)){
-              String[] strArr = line.replaceAll("\t", "").split("<->");
-              int j=0;
-              for(int i=0;i<strArr.length;i++){
-                if(strArr[i].equals(whereColumn)){
-                  break;
-                }
-                else{
-                  j++;
-                }
-              }
-
-              BufferedReader br1 =
-                  new BufferedReader(new FileReader(tableFile));
-
-              String line1 = null;
-              while((line1 = br1.readLine())!=null){
-                line1 = br1.readLine();
-                //Change regex when you get the inserted data.
-                String[] strArr1 = line1.replaceAll("\\s+", "").split(
-                    "<->");
-                if(strArr1[j].equals(whereValue)){
-                  List<String> templi = Arrays.asList(strArr1);
-                  flag = 1;
-                  System.out.println(templi);
-                }
-              }
-
-              if(flag==1){
-                System.out.println("Column Found!");
-              }
-              else {
-                System.out.println("No data found");
+          // COlumn exists
+          if (line.contains(whereColumn)) {
+            String[] strArr = line.replaceAll("\t", "").split("<->");
+            int j = 0;
+            for (int i = 0; i < strArr.length; i++) {
+              if (strArr[i].equals(whereColumn)) {
+                break;
+              } else {
+                j++;
               }
             }
-            else{
+
+            Scanner sc1 = new Scanner(tableFile);
+            String line1 = null;
+            while (sc1.hasNextLine()) {
+              line1 = sc1.nextLine();
+              //Change regex when you get the inserted data.
+              String[] strArr1 = line1.replaceAll("\\s+", "").split(
+                  "<->");
+              if (strArr1[j].equals(whereValue)) {
+                List<String> templi = Arrays.asList(strArr1);
+                flag = 1;
+                System.out.println(templi);
+              }
+            }
+
+            if (flag == 1) {
+            } else {
               log.logger(Level.SEVERE,
-                  "No column named" + whereColumn + "found!");
+                  "No matching rows found!");
             }
+          } else {
+            log.logger(Level.SEVERE,
+                "No column named" + whereColumn + "found!");
+          }
         } catch (Exception e) {
           e.printStackTrace();
         }
