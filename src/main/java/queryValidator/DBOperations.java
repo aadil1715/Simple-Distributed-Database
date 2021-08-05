@@ -41,6 +41,11 @@ public class DBOperations {
                 UpdateValidator updateValidator=new UpdateValidator(query,queryLogsFile);
                 updateValidator.validateUpdate(username);
                 break;
+            case "delete":
+                DeleteValidator deleteValidator = new DeleteValidator(query,
+                    queryLogsFile);
+                deleteValidator.validateDelete(username);
+
             }
         }
 
