@@ -1,3 +1,0 @@
-student1	(fk_monitor)--*----------REFERENCES------------1-->monitor
-student2	(fk_monitor)--*----------REFERENCES------------1-->monitor
-student3	(fk_monitor)--*----------REFERENCES------------1-->monitor

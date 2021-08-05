@@ -14,49 +14,74 @@ public class Drop {
     }
 
     public static void dropDDTable(String tableName, String username, FileWriter queryFileLogs) throws IOException {
-        String dataDictionaryPath = "Output/Data_dictionary.txt";
-        File ddFile=new File(dataDictionaryPath);
-        FileReader dataDictionaryFile = new FileReader(ddFile);
-        BufferedReader bufferedReader = new BufferedReader(dataDictionaryFile);
-        File tempDataDictionary = new File("Output/Temporary.txt");
-        FileWriter fileWriter=new FileWriter(tempDataDictionary,true);
-        String line;
-        int count=0;
-        //Iterating Line by line in file. Line in which table to be dropped is there, is not written in temporary file.
-        while ((line = bufferedReader.readLine()) != null) {
-            String currentLine=line;
-            if (line.contains(tableName)) {
-                int firstIndex=line.indexOf(tableName);
-                int lastIndex=line.indexOf(";");
-                String lineToDrop=line.substring(firstIndex,lastIndex);
-                if(currentLine.equals(lineToDrop))
-                    continue;
+
+        try {
+            if (Locks.checkLock(username, tableName)) {
+                System.out.println("Table is currently locked, please try again after sometime!!");
+            } else {
+                Locks.setLock(username, tableName);
+                String dataDictionaryPath = "Output/Data_dictionary.txt";
+                File ddFile = new File(dataDictionaryPath);
+                FileReader dataDictionaryFile = new FileReader(ddFile);
+                BufferedReader bufferedReader = new BufferedReader(dataDictionaryFile);
+                File tempDataDictionary = new File("Output/Temporary.txt");
+                FileWriter fileWriter = new FileWriter(tempDataDictionary, true);
+                String line;
+                int count = 0;
+                //Iterating Line by line in file. Line in which table to be dropped is there, is not written in temporary file.
+                while ((line = bufferedReader.readLine()) != null) {
+                    String currentLine = line;
+                    if (line.contains(tableName)) {
+                        int firstIndex = line.indexOf(tableName);
+                        int lastIndex = line.indexOf(";");
+                        String lineToDrop = line.substring(firstIndex, lastIndex);
+                        if (currentLine.equals(lineToDrop))
+                            continue;
+                    }
+                    // Write every other line in temporary file
+                    else {
+                        fileWriter.write(currentLine);
+                        fileWriter.write("\n");
+                    }
+                }
+                fileWriter.flush();
+                fileWriter.close();
+                ddFile.delete();
+                tempDataDictionary.renameTo(new File("Output/Data_dictionary.txt"));
             }
-            // Write every other line in temporary file
-            else{
-                fileWriter.write(currentLine);
-                fileWriter.write("\n");
-            }
+        }catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        fileWriter.flush();
-        fileWriter.close();
-        ddFile.delete();
-        tempDataDictionary.renameTo(new File("Output/Data_dictionary.txt"));
+        Locks.removeLock(username,tableName);
     }
 
     public static void dropTable(String tableName,String username,FileWriter queryFileLogs) throws IOException {
-        File tableFile = new File("output/"+tableName+".txt");
-        boolean isTableDeleted = tableFile.delete();
-        if(isTableDeleted) {
-            queryFileLogs.append("(").append(username).append(")=> ").append("TABLE: ").append(tableName)
-                    .append(" is Dropped.").append("\n");
-            log.logger(Level.INFO, "Table Dropped successfully !!!");
+        try {
+            if (Locks.checkLock(username, tableName)) {
+                System.out.println("Table is currently locked, please try again after sometime!!");
+            } else {
+                Locks.setLock(username, tableName);
+                File tableFile = new File("output/" + tableName + ".txt");
+                boolean isTableDeleted = tableFile.delete();
+                if (isTableDeleted) {
+                    queryFileLogs.append("(").append(username).append(")=> ").append("TABLE: ").append(tableName)
+                            .append(" is Dropped.").append("\n");
+                    log.logger(Level.INFO, "Table Dropped successfully !!!");
+                } else {
+                    queryFileLogs.append("(").append(username).append(")=> ").append("TABLE: ").append(tableName)
+                            .append(" does not exist.").append("\n");
+                    log.logger(Level.WARNING, "Table Does not exist !!!");
+                }
+            }
         }
-        else {
-            queryFileLogs.append("(").append(username).append(")=> ").append("TABLE: ").append(tableName)
-                    .append(" does not exist.").append("\n");
-            log.logger(Level.WARNING, "Table Does not exist !!!");
+        catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+        Locks.removeLock(username, tableName);
     }
 }
 

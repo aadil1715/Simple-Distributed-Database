@@ -23,8 +23,9 @@ public class Insert {
 
         try {
             if (Locks.checkLock(username, tableName)) {
-                System.out.println("Table is locked, please try again later");
+                System.out.println("Table is currently locked, please try again after sometime!!");
             } else {
+                Locks.setLock(username,tableName);
 
                 // fetch primary Key column from Data Dictionary
                 String dataDictionaryPath = "Output/Data_dictionary.txt";

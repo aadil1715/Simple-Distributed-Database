@@ -1,10 +1,4 @@
 TABLES	 <==> 	COLUMNS
-student1	<==>	student_id INT NOT_NULL	<->	student_name VARCHAR NOT_NULL	<->	email VARCHAR NOT_NULL	<->	phoneNumber VARCHAR	<->	PRIMARY_KEY (student_id)	<->	FOREIGN_KEY (FK_COLUMN:fk_monitor,REF_TABLE:monitor);
-student2	<==>	student_id INT NOT_NULL	<->	student_name VARCHAR NOT_NULL	<->	email VARCHAR NOT_NULL	<->	phoneNumber VARCHAR	<->	PRIMARY_KEY (student_id)	<->	FOREIGN_KEY (FK_COLUMN:fk_monitor,REF_TABLE:monitor);
-student3	<==>	student_id INT NOT_NULL	<->	student_name VARCHAR NOT_NULL	<->	email VARCHAR NOT_NULL	<->	phoneNumber VARCHAR	<->	PRIMARY_KEY (student_id)	<->	FOREIGN_KEY (FK_COLUMN:fk_monitor,REF_TABLE:monitor);
-student4	<==>	student_id INT NOT_NULL	<->	student_name VARCHAR NOT_NULL	<->	email VARCHAR NOT_NULL	<->	phoneNumber VARCHAR	<->	PRIMARY_KEY (student_id)	<->	FOREIGN_KEY (FK_COLUMN:fk_monitor,REF_TABLE:monitor);
-student10	<==>	student_id INT NOT_NULL	<->	student_name VARCHAR NOT_NULL	<->	email VARCHAR NOT_NULL	<->	phoneNumber VARCHAR	<->	PRIMARY_KEY (student_id)	<->	FOREIGN_KEY (FK_COLUMN:fk_monitor,REF_TABLE:monitor);
-student40	<==>	student_id INT NOT_NULL	<->	student_name VARCHAR NOT_NULL	<->	email VARCHAR NOT_NULL	<->	phoneNumber VARCHAR	<->	PRIMARY_KEY (student_id)	<->	FOREIGN_KEY (FK_COLUMN:fk_monitor,REF_TABLE:monitor);
-student10	<==>	student_id INT NOT_NULL	<->	student_name VARCHAR NOT_NULL	<->	email VARCHAR NOT_NULL	<->	phoneNumber VARCHAR	<->	PRIMARY_KEY (student_id)	<->	FOREIGN_KEY (FK_COLUMN:fk_monitor,REF_TABLE:monitor);
-student20	<==>	student_id INT NOT_NULL	<->	student_name VARCHAR NOT_NULL	<->	email VARCHAR NOT_NULL	<->	phoneNumber VARCHAR	<->	PRIMARY_KEY (student_id)	<->	FOREIGN_KEY (FK_COLUMN:fk_monitor,REF_TABLE:monitor);
-student30	<==>	student_id INT NOT_NULL	<->	student_name VARCHAR NOT_NULL	<->	email VARCHAR NOT_NULL	<->	phoneNumber VARCHAR	<->	PRIMARY_KEY (student_id)	<->	FOREIGN_KEY (FK_COLUMN:fk_monitor,REF_TABLE:monitor);
+monitor1	<==>	monitor_id INT	<->	monitor_name VARCHAR	<->	email VARCHAR	<->	phoneNumber VARCHAR	<->	PRIMARY_KEY (monitor_id);
+student1	<==>	student_id INT NOT_NULL	<->	student_name VARCHAR NOT_NULL	<->	email VARCHAR NOT_NULL	<->	phoneNumber VARCHAR	<->	PRIMARY_KEY (student_id)	<->	FOREIGN_KEY (FK_COLUMN:fk_monitor,REF_TABLE:monitor1);
+student2	<==>	student_id INT NOT_NULL	<->	student_name VARCHAR NOT_NULL	<->	email VARCHAR NOT_NULL	<->	phoneNumber VARCHAR	<->	PRIMARY_KEY (student_id)	<->	FOREIGN_KEY (FK_COLUMN:fk_monitor,REF_TABLE:monitor2);

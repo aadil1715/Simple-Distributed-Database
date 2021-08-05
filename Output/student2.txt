@@ -1,0 +1,3 @@
+student_id	<->	student_name	<->	email	<->	phoneNumber
+10	<->	Aditya	<->	aditya@gmail.com	<->	4567
+101	<->	Aditya	<->	aditya@gmail.com	<->	4567
