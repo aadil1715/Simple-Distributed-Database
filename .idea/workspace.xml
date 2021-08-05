@@ -5,20 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77f8c2b5-0333-41bd-935a-8d57030f2261" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Output/student5.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Output/student6.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/queryParser/Update.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/queryValidator/DeleteValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/queryValidator/SelectValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/queryValidator/SelectValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/queryParser/Select.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/queryParser/Select.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/queryValidator/CreateValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/queryValidator/CreateValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/queryValidator/DBOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/queryValidator/DBOperations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/queryValidator/DropValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/queryValidator/DropValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database.log" beforeDir="false" afterPath="$PROJECT_DIR$/Database.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/Query_Logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Output/Query_Logs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/queryParser/Delete.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/queryParser/Parser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/queryValidator/DeleteValidator.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/queryParser/Select.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/queryParser/Select.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/queryValidator/SelectValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/queryValidator/SelectValidator.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,8 +39,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="RelationalDatabase" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -60,6 +62,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -69,7 +76,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1628122722806</updated>
-      <workItem from="1628122728051" duration="727000" />
+      <workItem from="1628122728051" duration="3472000" />
     </task>
     <servers />
   </component>

@@ -165,3 +165,25 @@ Aug 05, 2021 5:11:50 AM dataLogs.DataLogs logger
 INFO: Data Inserted Successfully !!
 Aug 05, 2021 5:11:50 AM dataLogs.DataLogs logger
 INFO: Generating SQL Dump
+Aug 05, 2021 6:05:42 AM dataLogs.DataLogs logger
+INFO: Login successful
+Aug 05, 2021 6:06:05 AM dataLogs.DataLogs logger
+WARNING: INVALID SQL Query !!
+Aug 05, 2021 6:06:05 AM dataLogs.DataLogs logger
+WARNING: No commands have been executed
+Aug 05, 2021 6:07:39 AM dataLogs.DataLogs logger
+INFO: Login successful
+Aug 05, 2021 6:07:59 AM dataLogs.DataLogs logger
+SEVERE: No table found!
+Aug 05, 2021 6:07:59 AM dataLogs.DataLogs logger
+WARNING: No commands have been executed
+Aug 05, 2021 6:09:26 AM dataLogs.DataLogs logger
+WARNING: Login failed
+Aug 05, 2021 6:10:28 AM dataLogs.DataLogs logger
+WARNING: No commands have been executed
+Aug 05, 2021 6:56:07 AM dataLogs.DataLogs logger
+INFO: Login successful
+Aug 05, 2021 6:59:12 AM dataLogs.DataLogs logger
+WARNING: INVALID Update SQL Query !!
+Aug 05, 2021 6:59:12 AM dataLogs.DataLogs logger
+WARNING: No commands have been executed
