@@ -12,26 +12,37 @@ import java.util.regex.Matcher;
 
 import static queryParser.Insert.log;
 
-public class Delete {
+public class UpdateV1 {
 
-  public static void parseDelete(Matcher sqlQuery, String username,
+  public static void parseUpdate(Matcher sqlQuery, String username,
                                  FileWriter queryLogsFile) throws IOException {
     List<String> li = Arrays.asList(sqlQuery.group().split(" "));
-    String tableName = li.get(2);
-    String whereCondition = li.get(4);
-    deleteOperation(tableName, whereCondition,username,queryLogsFile);
+    String tableName = li.get(1);
+    String colNames = li.get(3);
+    String whereCondition = li.get(5);
+    List<String> liColnames = new ArrayList<>();
+    if (colNames.contains(",")) {
+      liColnames = Arrays.asList(colNames.split(","));
+    } else {
+      liColnames = Arrays.asList(colNames);
+    }
+    updateOperation(tableName, liColnames, whereCondition, queryLogsFile,username);
+
   }
 
-  public static void deleteOperation(String tableName, String whereCondition,
-                                     String username, FileWriter queryLogsFile
-                                     ) throws IOException {
+  public static void updateOperation(String tableName, List<String> liColNames
+      , String whereCondition,FileWriter queryLogsFile,String username) throws IOException {
     String whereColumn = whereCondition.split("=")[0];
     String whereValue = whereCondition.split("=")[1];
     File tableFile = new File("output/" + tableName + ".txt");
+    String columntoUpdate = liColNames.get(0).split("=")[0];
+    String toUpdate = liColNames.get(0).split("=")[1];
     if ((tableFile.exists())) {
+      Scanner sc = new Scanner(tableFile);
       List<List<String>> fileData = new ArrayList<>();
-      List<List<String>> fileDataToDelete = new ArrayList<>();
+
       Scanner sc1 = new Scanner(tableFile);
+
       while (sc1.hasNextLine()) {
         List<String> fileContent = new ArrayList<>();
         String[] cells = sc1.nextLine().replaceAll("\t", "").split("<->");
@@ -40,7 +51,9 @@ public class Delete {
         }
         fileData.add(fileContent);
       }
-      Scanner sc = new Scanner(tableFile);
+
+
+      //Finding col Index of where condition and column to update.
       String line = sc.nextLine();
       List<String> updateColIndexes = new ArrayList<>();
       int whereColIndex = -1;
@@ -58,13 +71,32 @@ public class Delete {
         queryLogsFile.append("(").append(username).append(")=>").append("Error!!.... Query: ")
             .append("No column found! for where column").append("\n");
       } else {
-        for (int a = 1; a < fileData.size(); a++) {
-          if (fileData.get(a).get(whereColIndex).equals(whereValue)) {
-            fileDataToDelete.add(fileData.get(a));
+
+        for (int i = 0; i < liColNames.size(); i++) {
+          String columntoUpdate1 = liColNames.get(i).split("=")[0];
+          if (line.contains(columntoUpdate1)) {
+            for (int j = 0; j < strArr.length; j++) {
+              if (strArr[j].equals(columntoUpdate1)) {
+                updateColIndexes.add(String.valueOf(j));
+                break;
+              }
+            }
           }
         }
-        fileData.removeAll(fileDataToDelete);
+        sc.close();
       }
+
+      for (int a = 1; a < fileData.size(); a++) {
+        if (fileData.get(a).get(whereColIndex).equals(whereValue)) {
+          for (int i = 0; i < updateColIndexes.size(); i++) {
+            List<String> x = fileData.get(a);
+            x.set(Integer.parseInt(updateColIndexes.get(i)),
+                liColNames.get(i).split("=")[1]);
+            fileData.set(a, x);
+          }
+        }
+      }
+
       FileWriter fileWriter = new FileWriter(tableFile, false);
       for (List<String> rowData : fileData) {
         for (int a = 0; a < rowData.size(); a++) {
@@ -77,13 +109,14 @@ public class Delete {
         }
       }
       fileWriter.flush();
-
-      System.out.println("Deleted Records Successfully");
+      System.out.println("Updated records Successfully");
       queryLogsFile.append("(").append(username).append(")=>").append("Query " +
           "executed successfully " +
           ": ")
-          .append("Deleted records successfully!").append("\n");
+          .append("Updated records successfully!").append("\n");
       queryLogsFile.flush();
     }
+
+
   }
 }
