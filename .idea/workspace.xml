@@ -4,27 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77f8c2b5-0333-41bd-935a-8d57030f2261" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Database.log" beforeDir="false" afterPath="$PROJECT_DIR$/Database.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/Data_dictionary.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/ERD.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/Query_Logs.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/SQLDump.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/Table_Locks.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/student10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/student20.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/student30.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/student5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/student6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/queryParser/Drop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/queryParser/Drop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/queryParser/Insert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/queryParser/Insert.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/queryParser/Locks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/queryParser/Locks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/queryParser/Insert.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/queryParser/Insert.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/queryParser/Locks.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/queryParser/Locks.class" afterDir="false" />
-    </list>
+    <list default="true" id="77f8c2b5-0333-41bd-935a-8d57030f2261" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,7 +70,7 @@
       <updated>1628122722806</updated>
       <workItem from="1628122728051" duration="3472000" />
       <workItem from="1628152832464" duration="9121000" />
-      <workItem from="1628162860172" duration="8285000" />
+      <workItem from="1628162860172" duration="8477000" />
     </task>
     <servers />
   </component>

@@ -14,7 +14,6 @@ public class Drop {
     }
 
     public static void dropDDTable(String tableName, String username, FileWriter queryFileLogs) throws IOException {
-
         try {
             if (Locks.checkLock(username, tableName)) {
                 System.out.println("Table is currently locked, please try again after sometime!!");
