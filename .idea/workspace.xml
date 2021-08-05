@@ -5,14 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77f8c2b5-0333-41bd-935a-8d57030f2261" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Database.log" beforeDir="false" afterPath="$PROJECT_DIR$/Database.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Output/Query_Logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Output/Query_Logs.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/queryParser/Delete.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/queryParser/Parser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/queryValidator/DeleteValidator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/queryParser/Select.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/queryParser/Select.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/queryValidator/SelectValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/queryValidator/SelectValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/SQLDump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Output/SQLDump.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/student10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Output/student10.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/student20.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Output/student20.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/student30.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Output/student30.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/queryParser/Insert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/queryParser/Insert.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +38,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -49,15 +51,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -77,6 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1628122722806</updated>
       <workItem from="1628122728051" duration="3472000" />
+      <workItem from="1628152832464" duration="9121000" />
     </task>
     <servers />
   </component>
